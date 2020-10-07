@@ -321,21 +321,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Graphics/Images
+    - Assets/Graphics/Sprites/Objects
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Graphics/Images
+  - Assets/Graphics/Sprites/Objects
   m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\GitHub\TFG\Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 48450000
-    m_LastClickedID: 17736
-    m_ExpandedIDs: 00000000e03c0000ea3c0000ec3c0000ee3c0000f03c0000a444000000ca9a3b
+    scrollPos: {x: 0, y: 49}
+    m_SelectedIDs: f04e0000
+    m_LastClickedID: 20208
+    m_ExpandedIDs: 00000000183d0000263d0000323d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -363,7 +363,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e03c0000
+    m_ExpandedIDs: 00000000183d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -391,7 +391,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 8030000022300000783100006c34000070310000542e0200743500005a3200006432000018330000063600009e31000000000000a83c0000
+    m_ExpandedInstanceIDs: 8030000022300000783100006c34000070310000542e0200743500005a3200006432000018330000063600009e310000a83c000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -455,9 +455,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1078.5826, y: 874.4275, z: -371.51382}
+    m_Target: {x: 814.466, y: 532.07733, z: -1172.4999}
     speed: 2
-    m_Value: {x: 1078.5826, y: 874.4275, z: -371.51382}
+    m_Value: {x: 831.0586, y: 532.1338, z: -1169.6603}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -508,9 +508,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 840.89856
+    m_Target: 753.3694
     speed: 2
-    m_Value: 840.89856
+    m_Value: 788.86847
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -708,7 +708,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 295
   m_AssetGUID: 
   m_InstanceID: 0
   m_LockTracker:
@@ -742,9 +742,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: def0ffff
-      m_LastClickedID: -3874
-      m_ExpandedIDs: 86cdffffcee5ffffd6efffff08f0ffffd4f0ffffdef0ffff44f8ffff88f8ffffa0f8ffff38faffff46faffff5afbffffd0490000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 5afbffff303c0000943c0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
