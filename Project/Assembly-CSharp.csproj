@@ -52,11 +52,14 @@
     <UnityVersion>2020.1.6f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Game\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Game\Camera\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Game\UI\UIManager.cs" />
     <Compile Include="Assets\Scripts\Menu\GoTo.cs" />
-    <Compile Include="Assets\Scripts\Game\Camera\CameraFollow.cs" />
-    <Compile Include="Assets\Scripts\Game\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Game\Camera\CameraLimits.cs" />
+    <Compile Include="Assets\Scripts\Game\Change Scene\StartPoint.cs" />
+    <Compile Include="Assets\Scripts\Game\Change Scene\GoToNewPlace.cs" />
+    <Compile Include="Assets\Scripts\Game\Destroy\DontDestroyOnLoad.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
