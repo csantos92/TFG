@@ -308,6 +308,54 @@ TextureImporter:
   - first:
       213: 8485095236816124343
     second: 07 - Japanese Lamp_15
+  - first:
+      213: -1403267500935448927
+    second: 07 - Japanese Lamp_16
+  - first:
+      213: 4176354672334109140
+    second: 07 - Japanese Lamp_17
+  - first:
+      213: 4075279850115246205
+    second: 07 - Japanese Lamp_18
+  - first:
+      213: -3953284929413130570
+    second: 07 - Japanese Lamp_19
+  - first:
+      213: -5170642776244410386
+    second: 07 - Japanese Lamp_20
+  - first:
+      213: 7599129319430897729
+    second: 07 - Japanese Lamp_21
+  - first:
+      213: 111148692319830449
+    second: 07 - Japanese Lamp_22
+  - first:
+      213: -3880330849810290026
+    second: 07 - Japanese Lamp_23
+  - first:
+      213: 4852874198389111280
+    second: 07 - Japanese Lamp_24
+  - first:
+      213: 4667129548231230318
+    second: 07 - Japanese Lamp_25
+  - first:
+      213: 2932122358860098000
+    second: 07 - Japanese Lamp_26
+  - first:
+      213: 1343718557972951115
+    second: 07 - Japanese Lamp_27
+  - first:
+      213: 5364212996591441757
+    second: 07 - Japanese Lamp_28
+  - first:
+      213: -7181872761299554361
+    second: 07 - Japanese Lamp_29
+  - first:
+      213: 798042606987777211
+    second: 07 - Japanese Lamp_30
+  - first:
+      213: -7663959955553912320
+    second: 07 - Japanese Lamp_31
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -352,7 +400,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -399,9 +447,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 368
-        width: 16
-        height: 16
+        y: 351
+        width: 24
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -419,10 +467,10 @@ TextureImporter:
       name: 07 - Japanese Lamp_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 368
-        width: 16
-        height: 16
+        x: 40
+        y: 350
+        width: 31
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -440,10 +488,10 @@ TextureImporter:
       name: 07 - Japanese Lamp_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 368
-        width: 16
-        height: 16
+        x: 89
+        y: 350
+        width: 31
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -461,10 +509,10 @@ TextureImporter:
       name: 07 - Japanese Lamp_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 368
-        width: 16
-        height: 16
+        x: 136
+        y: 350
+        width: 31
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -482,10 +530,10 @@ TextureImporter:
       name: 07 - Japanese Lamp_4
       rect:
         serializedVersion: 2
-        x: 64
-        y: 368
-        width: 16
-        height: 16
+        x: 0
+        y: 258
+        width: 18
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -503,10 +551,10 @@ TextureImporter:
       name: 07 - Japanese Lamp_5
       rect:
         serializedVersion: 2
-        x: 80
-        y: 368
-        width: 16
-        height: 16
+        x: 48
+        y: 258
+        width: 18
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -525,9 +573,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 368
-        width: 16
-        height: 16
+        y: 258
+        width: 18
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -545,10 +593,10 @@ TextureImporter:
       name: 07 - Japanese Lamp_7
       rect:
         serializedVersion: 2
-        x: 112
-        y: 368
-        width: 16
-        height: 16
+        x: 144
+        y: 258
+        width: 18
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -566,10 +614,10 @@ TextureImporter:
       name: 07 - Japanese Lamp_8
       rect:
         serializedVersion: 2
-        x: 128
-        y: 368
-        width: 16
-        height: 16
+        x: 30
+        y: 159
+        width: 24
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -587,10 +635,10 @@ TextureImporter:
       name: 07 - Japanese Lamp_9
       rect:
         serializedVersion: 2
-        x: 144
-        y: 368
-        width: 16
-        height: 16
+        x: 70
+        y: 158
+        width: 31
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -608,10 +656,10 @@ TextureImporter:
       name: 07 - Japanese Lamp_10
       rect:
         serializedVersion: 2
-        x: 160
-        y: 368
-        width: 16
-        height: 16
+        x: 119
+        y: 158
+        width: 31
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -629,10 +677,10 @@ TextureImporter:
       name: 07 - Japanese Lamp_11
       rect:
         serializedVersion: 2
-        x: 0
-        y: 352
-        width: 16
-        height: 16
+        x: 166
+        y: 158
+        width: 26
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -650,10 +698,10 @@ TextureImporter:
       name: 07 - Japanese Lamp_12
       rect:
         serializedVersion: 2
-        x: 16
-        y: 352
-        width: 16
-        height: 16
+        x: 30
+        y: 66
+        width: 18
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -671,10 +719,10 @@ TextureImporter:
       name: 07 - Japanese Lamp_13
       rect:
         serializedVersion: 2
-        x: 32
-        y: 352
-        width: 16
-        height: 16
+        x: 78
+        y: 66
+        width: 18
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -692,10 +740,10 @@ TextureImporter:
       name: 07 - Japanese Lamp_14
       rect:
         serializedVersion: 2
-        x: 48
-        y: 352
-        width: 16
-        height: 16
+        x: 126
+        y: 66
+        width: 18
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -713,10 +761,10 @@ TextureImporter:
       name: 07 - Japanese Lamp_15
       rect:
         serializedVersion: 2
-        x: 64
-        y: 352
-        width: 16
-        height: 16
+        x: 174
+        y: 66
+        width: 18
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -726,1476 +774,6 @@ TextureImporter:
       bones: []
       spriteID: 7b9b8c3792d11c570800000000000000
       internalID: 8485095236816124343
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_16
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 352
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 698db2cd623d78570800000000000000
-      internalID: 8468969788149586070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_17
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 352
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1056e41de1b5e3550800000000000000
-      internalID: 6142447129698657537
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_18
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 352
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c342bb24f112b8570800000000000000
-      internalID: 8469899942347613244
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_19
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 352
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8a782a5c78a441360800000000000000
-      internalID: 7139413256285882280
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_20
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 352
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e1a8cafd7025bd20800000000000000
-      internalID: 3293574427941839333
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_21
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 352
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b238450f5479c13c0800000000000000
-      internalID: -4387465610325097685
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_22
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 336
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c354fc1fa9b6dba0800000000000000
-      internalID: -6064455686451604544
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_23
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 336
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 01fd013c6637612b0800000000000000
-      internalID: -5614173000274223344
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_24
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 336
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 12cf2b138177be280800000000000000
-      internalID: -9012979283455181791
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_25
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 336
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b95ab14eb384c3160800000000000000
-      internalID: 7006554542348936603
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_26
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 272
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 549d07182f1b8c400800000000000000
-      internalID: 344721026605701445
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_27
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 272
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 072e1cc17e36ca530800000000000000
-      internalID: 3867576024275477104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_28
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 272
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08e23bf057a435fd0800000000000000
-      internalID: -2354456313549607296
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_29
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 272
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f1ca30b41bdeeee10800000000000000
-      internalID: 2228980211318500383
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_30
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 272
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a40175f99d075f420800000000000000
-      internalID: 2663158834643013706
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_31
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 272
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e996bf9135d86ba0800000000000000
-      internalID: -6095387686536308251
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_32
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 272
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3cbe55eba8e51beb0800000000000000
-      internalID: -4705876185633657917
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_33
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 272
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b500e6083a4c51c10800000000000000
-      internalID: 2023739814086312027
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_34
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 256
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eeac11a7cfb2f4460800000000000000
-      internalID: 7228044290332674798
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_35
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 256
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b8e596ea24266710800000000000000
-      internalID: 1686074877172639929
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_36
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 256
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6370d2df39606b320800000000000000
-      internalID: 2573251469766362934
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_37
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 256
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0983bc38b69a4cd90800000000000000
-      internalID: -7078346435081848688
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_38
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 256
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ab97b01349d73f960800000000000000
-      internalID: 7634583868754590138
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_39
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 256
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b76469de8009dbb0800000000000000
-      internalID: -4910893305138223180
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_40
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 256
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 387c5d6fd1245b840800000000000000
-      internalID: 5239166437978130307
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_41
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 256
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2334a5886f48fda60800000000000000
-      internalID: 7701020082211275570
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_42
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: edf294f5dc52d2bc0800000000000000
-      internalID: -3806344546061045794
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_43
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 598417281452c46a0800000000000000
-      internalID: -6463750401891940203
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_44
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d33f94e1c6ecd4610800000000000000
-      internalID: 1607167605801087805
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_45
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 93657ff25ce2432d0800000000000000
-      internalID: -3299961202507557319
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_46
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e15166e681d0b4690800000000000000
-      internalID: -7616979946184501986
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_47
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7741475a16c4025d0800000000000000
-      internalID: -3089385362104773513
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_48
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c116ce8ff8ab3ad40800000000000000
-      internalID: 5594520289643618588
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_49
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f81963b1e6f6d130800000000000000
-      internalID: 3591329202112633072
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_50
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d19756c068a793140800000000000000
-      internalID: 4699922402290006301
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_51
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 996999344615c0cb0800000000000000
-      internalID: -4896449203785853287
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_52
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 189fe3ca38bf8f940800000000000000
-      internalID: 5330286701942077825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_53
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d78c0b55a0b473fb0800000000000000
-      internalID: -4668179980986824579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_54
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 339241945bf7298b0800000000000000
-      internalID: -5146911007539189453
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_55
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f6c6efbd5fec2f00800000000000000
-      internalID: 1093511995474757360
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_56
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a8c61a1567e54990800000000000000
-      internalID: -7402255991098128220
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_57
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: efc125147beeeab50800000000000000
-      internalID: 6606480174241422590
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_58
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c968160a800f31180800000000000000
-      internalID: -9145702498418194788
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_59
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b8ef141d8ba783110800000000000000
-      internalID: 1240876631543905931
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_60
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5cc7cf40a30e20190800000000000000
-      internalID: -7997583448460198715
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_61
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 663046404fdc0dc60800000000000000
-      internalID: 7840993399181411174
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_62
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6116d97d367e367e0800000000000000
-      internalID: -1773319412248649450
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_63
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 92ccfc67d8a33d8a0800000000000000
-      internalID: -6281612675993580503
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_64
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a67aedac41171c490800000000000000
-      internalID: -7727771151474186390
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_65
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 096ed9f08ceada420800000000000000
-      internalID: 2642960730615047824
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_66
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b13b35765afd39e20800000000000000
-      internalID: 3356272048817287963
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_67
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c3e68037c36831d60800000000000000
-      internalID: 7859773368877739580
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_68
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9a2cf8e14dad53d40800000000000000
-      internalID: 5563593519266775721
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_69
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f4c65a598b846ada0800000000000000
-      internalID: -5933975501392221105
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_70
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b278a8c7134be6ca0800000000000000
-      internalID: -6021677527111923925
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_71
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6bb9f3589b216970800000000000000
-      internalID: 8746319884574112620
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_72
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ecb01ca0ea53be110800000000000000
-      internalID: 1291184739792784334
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_73
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e0591545ae2984d10800000000000000
-      internalID: 2110097960557712654
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_74
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3cf42d6ffefd48ec0800000000000000
-      internalID: -3565478783239434301
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_75
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 625413fc2373fc0c0800000000000000
-      internalID: -4553360006884276954
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_76
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2f436ba38ca3a4e70800000000000000
-      internalID: 9100150628708398322
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_77
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 15ae2b10571168200800000000000000
-      internalID: 181852029192432209
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_78
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b990d2744d978bcf0800000000000000
-      internalID: -236305027802789477
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_79
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2be58d09b4e412c30800000000000000
-      internalID: 4332830402966740658
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_80
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d0c3770f90c363ce0800000000000000
-      internalID: -1425886218629465075
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_81
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 449175f3d6aceaba0800000000000000
-      internalID: -6075696276713301692
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_82
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0eac521bec25ff970800000000000000
-      internalID: 8790836045339282144
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_83
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 54ca8b2f9e5f5c900800000000000000
-      internalID: 704239301901724741
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_84
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 45d69fbb47e832ee0800000000000000
-      internalID: -1287028436476793516
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 07 - Japanese Lamp_85
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3941750cf7c537b10800000000000000
-      internalID: 1978026365103314067
       vertices: []
       indices: 
       edges: []
