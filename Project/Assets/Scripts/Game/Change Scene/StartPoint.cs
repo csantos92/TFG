@@ -8,10 +8,9 @@ public class StartPoint : MonoBehaviour
     private PlayerController player;
     private CameraFollow theCamera;
     public Vector2 facingDirection = Vector2.zero;
-
     public string uuid;
 
-    // Start is called before the first frame update
+    //Gets the position where the player must start when changing to another scene
     void Start()
     {
 

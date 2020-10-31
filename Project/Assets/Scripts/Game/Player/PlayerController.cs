@@ -11,11 +11,10 @@ public class PlayerController : MonoBehaviour
     private bool walking;
     public Vector2 lastMovement = Vector2.zero;
     public string nextUuid;
-
     private Rigidbody2D _rigidbody;
 
 
-    // Start is called before the first frame update
+    // Get player component
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -23,7 +22,7 @@ public class PlayerController : MonoBehaviour
         playerCreated = true;
     }
 
-    // Update is called once per frame
+    // Player movements
     void Update()
     {
         walking = false;
@@ -43,6 +42,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //If player it's not moving then set velocity to zero
     private void LateUpdate()
     {
 

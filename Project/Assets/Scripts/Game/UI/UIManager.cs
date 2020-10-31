@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public GameObject inventoryPanel, mainPanel, menuPanel, itemsPanel, questsPanel, statsPanel, gameOver, sortingPanel;
     public Text inventoryText;
 
+    //Set all components not visible
     private void Start()
     {
         inventoryPanel.SetActive(false);
@@ -22,18 +23,18 @@ public class UIManager : MonoBehaviour
         sortingPanel.SetActive(false);
     }
 
-    // Update is called once per frame
+    //Open or close pause menu
     void Update()
     {
 
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return))
         {
             ToggleInventory();
-
         }
 
     }
 
+    //Set components related to inventory visible
     public void ToggleInventory()
     {
         inventoryPanel.SetActive(!inventoryPanel.activeInHierarchy);
@@ -46,6 +47,7 @@ public class UIManager : MonoBehaviour
         inventoryText.text = "Inventario";
     }
 
+    //Set components related to quests visible
     public void ToggleQuests()
     {
         questsPanel.SetActive(true);
@@ -55,6 +57,7 @@ public class UIManager : MonoBehaviour
         inventoryText.text = "Misiones";
     }
 
+    //Set components related to stats visible
     public void ToggleStats()
     {
         statsPanel.SetActive(true);
@@ -64,6 +67,7 @@ public class UIManager : MonoBehaviour
         inventoryText.text = "Estado";
     }
 
+    //Set components related to items visible
     public void ToggleItems()
     {
         itemsPanel.SetActive(true);

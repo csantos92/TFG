@@ -827,4 +827,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Menus/Tutorial.unity
   - Assets/Scenes/Game/Level/Level.unity
   - Assets/Scenes/Game/House Interior/House Interior.unity
-  playerPath: C:/Users/Carlos/Desktop/juego/otro/La leyenda de Masamune.exe
+  playerPath: C:/Users/Carlos/Desktop/juego/La leyenda de Masamune.exe

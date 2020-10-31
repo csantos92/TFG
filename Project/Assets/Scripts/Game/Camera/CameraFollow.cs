@@ -5,21 +5,14 @@ using UnityEngine;
 [RequireComponent(typeof(Camera))]
 public class CameraFollow : MonoBehaviour
 {
-
     public GameObject target;
     private Vector3 targetPosition;
     public float cameraSpeed = 5;
-
     private Camera theCamera;
     private Vector3 minLimits, maxLimits;
     private float halfHeight, halfWidth;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    //Camera limits
     public void ChangeLimits(BoxCollider2D cameraLimits)
     {
         minLimits = cameraLimits.bounds.min;
@@ -30,7 +23,7 @@ public class CameraFollow : MonoBehaviour
         halfWidth = halfHeight / Screen.height * Screen.width;
     }
 
-    // Update is called once per frame
+    //Follow player
     void Update()
     {
         float posX = Mathf.Clamp(this.target.transform.position.x, minLimits.x + halfWidth, maxLimits.x - halfWidth);
