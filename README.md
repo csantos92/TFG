@@ -4,7 +4,7 @@ Trabajo de fin de grado de la carrera de Ingeniería Informática sobre el área
 
 ## Proyecto
 
-Para ver el proyecto hay que descargar el repositorio e importarlo a Unity (2020.1.6f1). La carpeta Proyecto que se encuentra en la raíz del repositorio es el proyecto que actualizado, mientras que los proyectos que se encuentran dentro de la carpeta Checkpoints son los que se han utilizado para cada entrega.
+Para ver el proyecto hay que descargar el repositorio e importarlo a Unity (2020.1.6f1). La carpeta Proyecto que se encuentra en la raíz del repositorio es el proyecto actualizado, mientras que los proyectos que se encuentran dentro de la carpeta Checkpoints son los que se han utilizado para cada entrega.
 
 ## Versión jugable
 
