@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\Game\Destroy\DontDestroyOnLoad.cs" />
     <Compile Include="Assets\Scripts\Menu\GoTo.cs" />
     <Compile Include="Assets\Scripts\Game\Camera\CameraLimits.cs" />
+    <Compile Include="Assets\Scripts\Game\NPCs\NpcMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
