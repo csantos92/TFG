@@ -10,9 +10,15 @@ public class UIManager : MonoBehaviour
     public GameObject inventoryPanel, mainPanel, menuPanel, itemsPanel, questsPanel, statsPanel, gameOver, sortingPanel;
     public Text inventoryText;
 
+    public Slider playerHealthBar, playerHealthBar2;
+    public HealthManager playerHealthManager;
+    public Text playerHealthBarText;
+    private Animator _animator;
+
     //Set all components not visible
     private void Start()
     {
+        _animator = GameObject.Find("Player").GetComponent<Animator>();
         inventoryPanel.SetActive(false);
         menuPanel.SetActive(false);
         mainPanel.SetActive(false);
@@ -26,6 +32,20 @@ public class UIManager : MonoBehaviour
     //Open or close pause menu
     void Update()
     {
+        playerHealthBar.maxValue = playerHealthManager.maxHealth;
+        playerHealthBar.value = playerHealthManager.currentHealth;
+
+        playerHealthBar2.maxValue = playerHealthManager.maxHealth;
+        playerHealthBar2.value = playerHealthManager.currentHealth;
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.
+            Append("HP: ").
+            Append(playerHealthManager.currentHealth).
+            Append(" / ").
+            Append(playerHealthManager.maxHealth);
+
+        playerHealthBarText.text = stringBuilder.ToString();
 
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return))
         {

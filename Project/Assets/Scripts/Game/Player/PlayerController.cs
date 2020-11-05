@@ -19,13 +19,14 @@ public class PlayerController : MonoBehaviour
     public bool downPressed;
     public bool leftPressed;
     public bool rightPressed;
+    public HealthManager _healthManager;
 
     // Get player component
     void Start()
     {
         _animator = GameObject.Find("Player").GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
-        _animator.enabled = true;
+        _healthManager = FindObjectOfType<HealthManager>();
 
         playerCreated = true;
     }

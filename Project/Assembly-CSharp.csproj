@@ -61,6 +61,10 @@
     <Compile Include="Assets\Scripts\Menu\GoTo.cs" />
     <Compile Include="Assets\Scripts\Game\Camera\CameraLimits.cs" />
     <Compile Include="Assets\Scripts\Game\NPCs\NpcMovement.cs" />
+    <Compile Include="Assets\Scripts\Game\Health\HealthManager.cs" />
+    <Compile Include="Assets\Scripts\Game\Health\DamageNumber.cs" />
+    <Compile Include="Assets\Scripts\Game\Health\DamagePlayer.cs" />
+    <Compile Include="Assets\Scripts\Game\NPCs\EnemyController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
