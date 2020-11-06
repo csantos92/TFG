@@ -8,16 +8,25 @@ using System.Text;
 public class UIManager : MonoBehaviour
 {
     public GameObject inventoryPanel, mainPanel, menuPanel, itemsPanel, questsPanel, statsPanel, gameOver, sortingPanel;
-    public Text inventoryText;
+
 
     public Slider playerHealthBar, playerHealthBar2;
     public HealthManager playerHealthManager;
     public Text playerHealthBarText;
     private Animator _animator;
+    private WeaponManager weaponManager;
+    private ItemsManager itemsManager;
+    public int weaponNumber;
+
+    public Text inventoryText, swordName, swordDamage;
+    public Image swordImage;
+    public Button inventoryButton;
 
     //Set all components not visible
     private void Start()
     {
+        weaponManager = FindObjectOfType<WeaponManager>();
+        itemsManager = FindObjectOfType<ItemsManager>();
         _animator = GameObject.Find("Player").GetComponent<Animator>();
         inventoryPanel.SetActive(false);
         menuPanel.SetActive(false);
@@ -52,6 +61,28 @@ public class UIManager : MonoBehaviour
             ToggleInventory();
         }
 
+        weaponNumber = weaponManager.activeWeapon;
+        swordName.text = "" + weaponManager.GetWeaponAt(weaponNumber).weaponName;
+        swordDamage.text = "Daño: " + weaponManager.GetWeaponAt(weaponNumber).damage;
+        swordImage.sprite = weaponManager.GetWeaponAt(weaponNumber).GetComponent<SpriteRenderer>().sprite;
+
+        if (inventoryPanel.activeInHierarchy)
+        {
+            Time.timeScale = 0;
+            _animator.enabled = false;
+        }
+        else
+        {
+            Time.timeScale = 1;
+            _animator.enabled = true;
+        }
+
+        if (playerHealthManager.isDead)
+        {
+            Time.timeScale = 0;
+            gameOver.SetActive(true);
+        }
+
     }
 
     //Set components related to inventory visible
@@ -60,7 +91,7 @@ public class UIManager : MonoBehaviour
         inventoryPanel.SetActive(!inventoryPanel.activeInHierarchy);
         mainPanel.SetActive(true);
         menuPanel.SetActive(true);
-        itemsPanel.SetActive(true);
+        itemsPanel.SetActive(false);
         questsPanel.SetActive(false);
         statsPanel.SetActive(false);
         sortingPanel.SetActive(true);
@@ -88,13 +119,96 @@ public class UIManager : MonoBehaviour
     }
 
     //Set components related to items visible
-    public void ToggleItems()
+   /* public void ToggleItems()
     {
         itemsPanel.SetActive(true);
         questsPanel.SetActive(false);
         statsPanel.SetActive(false);
         sortingPanel.SetActive(true);
         inventoryText.text = "Inventario";
+    }*/
+
+    public void ToggleItems()
+    {
+        inventoryPanel.SetActive(!inventoryPanel.activeInHierarchy);
+        menuPanel.SetActive(!menuPanel.activeInHierarchy);
+        questsPanel.SetActive(false);
+        statsPanel.SetActive(false);
+        inventoryText.text = "";
+
+
+        //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
+
+
+        if (inventoryPanel.activeInHierarchy)
+        {
+            foreach (Transform t in inventoryPanel.transform)
+            {
+                Destroy(t.gameObject);
+            }
+            FillInventory();
+            Time.timeScale = 0;
+            _animator.enabled = false;
+
+        }
+    }
+
+    public void FillInventory()
+    {
+        List<GameObject> weapons = weaponManager.GetAllWeapons();
+        int i = 0;
+        foreach (GameObject w in weapons)
+        {
+            AddItemToInventory(w, InventoryButton.ItemType.WEAPON, i);
+            i++;
+        }
+
+        /*i = 0;
+        List<GameObject> regularItems = itemsManager.GetItems();
+        foreach (GameObject item in regularItems)
+        {
+            AddItemToInventory(item, InventoryButton.ItemType.ITEM, i);
+            i++;
+        }*/
+
+        i = 0;
+        List<GameObject> keyItems = itemsManager.GetQuestItems();
+        foreach (GameObject item in keyItems)
+        {
+            AddItemToInventory(item, InventoryButton.ItemType.SPECIAL_ITEMS, i);
+            i++;
+        }
+    }
+
+    private void AddItemToInventory(GameObject item, InventoryButton.ItemType type, int pos)
+    {
+        Button tempB = Instantiate(inventoryButton, inventoryPanel.transform);
+        tempB.GetComponent<InventoryButton>().type = type;
+        tempB.GetComponent<InventoryButton>().itemIdx = pos;
+        tempB.onClick.AddListener(() => tempB.GetComponent<InventoryButton>().ActivateButton());
+        tempB.image.sprite = item.GetComponent<SpriteRenderer>().sprite;
+    }
+
+    public void ShowOnly(int type)
+    {
+        inventoryText.text = "";
+        foreach (Transform t in inventoryPanel.transform)
+        {
+            t.gameObject.SetActive((int)t.GetComponent<InventoryButton>().type == type);
+        }
+        //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
+
+    }
+
+    public void ShowAll()
+    {
+        inventoryText.text = "";
+        foreach (Transform t in inventoryPanel.transform)
+        {
+            t.gameObject.SetActive(true);
+        }
+        //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
+
     }
 
 }
