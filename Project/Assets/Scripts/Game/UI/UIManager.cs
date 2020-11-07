@@ -94,8 +94,8 @@ public class UIManager : MonoBehaviour
         itemsPanel.SetActive(false);
         questsPanel.SetActive(false);
         statsPanel.SetActive(false);
-        sortingPanel.SetActive(true);
-        inventoryText.text = "Inventario";
+        sortingPanel.SetActive(false);
+        inventoryText.text = "";
     }
 
     //Set components related to quests visible
@@ -130,11 +130,11 @@ public class UIManager : MonoBehaviour
 
     public void ToggleItems()
     {
-        inventoryPanel.SetActive(!inventoryPanel.activeInHierarchy);
-        menuPanel.SetActive(!menuPanel.activeInHierarchy);
+        itemsPanel.SetActive(true);
         questsPanel.SetActive(false);
         statsPanel.SetActive(false);
-        inventoryText.text = "";
+        sortingPanel.SetActive(true);
+        inventoryText.text = "Inventario";
 
 
         //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
@@ -142,14 +142,11 @@ public class UIManager : MonoBehaviour
 
         if (inventoryPanel.activeInHierarchy)
         {
-            foreach (Transform t in inventoryPanel.transform)
+            foreach (Transform t in itemsPanel.transform)
             {
                 Destroy(t.gameObject);
             }
             FillInventory();
-            Time.timeScale = 0;
-            _animator.enabled = false;
-
         }
     }
 
@@ -162,8 +159,8 @@ public class UIManager : MonoBehaviour
             AddItemToInventory(w, InventoryButton.ItemType.WEAPON, i);
             i++;
         }
-
-        /*i = 0;
+        /*
+        i = 0;
         List<GameObject> regularItems = itemsManager.GetItems();
         foreach (GameObject item in regularItems)
         {
@@ -182,7 +179,8 @@ public class UIManager : MonoBehaviour
 
     private void AddItemToInventory(GameObject item, InventoryButton.ItemType type, int pos)
     {
-        Button tempB = Instantiate(inventoryButton, inventoryPanel.transform);
+        print(item);
+        Button tempB = Instantiate(inventoryButton, itemsPanel.transform);
         tempB.GetComponent<InventoryButton>().type = type;
         tempB.GetComponent<InventoryButton>().itemIdx = pos;
         tempB.onClick.AddListener(() => tempB.GetComponent<InventoryButton>().ActivateButton());
@@ -192,7 +190,7 @@ public class UIManager : MonoBehaviour
     public void ShowOnly(int type)
     {
         inventoryText.text = "";
-        foreach (Transform t in inventoryPanel.transform)
+        foreach (Transform t in itemsPanel.transform)
         {
             t.gameObject.SetActive((int)t.GetComponent<InventoryButton>().type == type);
         }
@@ -203,7 +201,7 @@ public class UIManager : MonoBehaviour
     public void ShowAll()
     {
         inventoryText.text = "";
-        foreach (Transform t in inventoryPanel.transform)
+        foreach (Transform t in itemsPanel.transform)
         {
             t.gameObject.SetActive(true);
         }

@@ -15,7 +15,7 @@ public class HealthManager : MonoBehaviour
     private GameObject bloodPoint;
     //private QuestEnemy quest;
     //private QuestManager questManager;
-    //private ItemsManager itemsManager;
+    private ItemsManager itemsManager;
 
     private GoTo reset;
 
@@ -24,7 +24,7 @@ public class HealthManager : MonoBehaviour
     {
         reset = FindObjectOfType<GoTo>();
         _characterRenderer = GetComponent<SpriteRenderer>();
-        //itemsManager = GetComponent<ItemsManager>();
+        itemsManager = GetComponent<ItemsManager>();
 
         //quest = GetComponent<QuestEnemy>();
         //questManager = FindObjectOfType<QuestManager>();
@@ -32,8 +32,6 @@ public class HealthManager : MonoBehaviour
         flashActive = true;
 
         bloodPoint = transform.Find("Blood Point").gameObject;
-
-        StartCoroutine(addHealth());
 
     }
 
@@ -58,8 +56,7 @@ public class HealthManager : MonoBehaviour
             {
                 ToggleColor(true);
                 flashActive = false;
-                //GetComponent<BoxCollider2D>().enabled = true;
-                //GetComponent<PlayerController>().canMove = true;
+                GetComponent<BoxCollider2D>().enabled = true;
 
             }
         }
@@ -106,26 +103,9 @@ public class HealthManager : MonoBehaviour
 
         if(flashLength > 0)
         {
-            //GetComponent<BoxCollider2D>().enabled = false;
-            //GetComponent<PlayerController>().canMove = false;
+            GetComponent<BoxCollider2D>().enabled = false;
             flashActive = true;
             flashCounter = flashLength;
-        }
-    }
-
-    IEnumerator addHealth()
-    {
-        while (true)
-        { // loops forever...
-            if (currentHealth < maxHealth)
-            { // if health < 100...
-                currentHealth += 1; // increase health and wait the specified time
-                yield return new WaitForSeconds(1);
-            }
-            else
-            { // if health >= 100, just yield 
-                yield return null;
-            }
         }
     }
 

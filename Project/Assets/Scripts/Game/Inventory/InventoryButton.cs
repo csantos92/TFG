@@ -11,7 +11,6 @@ public class InventoryButton : MonoBehaviour
     public int itemIdx;
     public ItemType type;
     
-
     public void ActivateButton()
     {
 
@@ -24,8 +23,8 @@ public class InventoryButton : MonoBehaviour
 
                 break;
             case ItemType.ITEM:
-                //FindObjectOfType<ItemsManager>().UseItem(itemIdx);
-                //FindObjectOfType<UIManager>().inventoryText.text = "Has utilizado: " + FindObjectOfType<ItemsManager>().GetRegularItemAt(itemIdx).name;
+                FindObjectOfType<ItemsManager>().UseItem(itemIdx);
+                FindObjectOfType<UIManager>().inventoryText.text = "Has utilizado: " + FindObjectOfType<ItemsManager>().GetRegularItemAt(itemIdx).name;
                 break;
             case ItemType.SPECIAL_ITEMS:
                 //QuestItem item = FindObjectOfType<ItemsManager>().GetItemAt(itemIdx);
