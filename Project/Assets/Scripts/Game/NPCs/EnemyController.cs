@@ -135,6 +135,14 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.name.Equals("Player"))
+        {
+            playerInTheZone = true;
+        }
+    }
+
     private void LateUpdate()
     {
         _animator.SetBool("Walking", isWalking);

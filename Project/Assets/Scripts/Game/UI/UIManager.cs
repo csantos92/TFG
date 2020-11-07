@@ -62,9 +62,9 @@ public class UIManager : MonoBehaviour
         }
 
         weaponNumber = weaponManager.activeWeapon;
-        swordName.text = "" + weaponManager.GetWeaponAt(weaponNumber).weaponName;
-        swordDamage.text = "Daño: " + weaponManager.GetWeaponAt(weaponNumber).damage;
-        swordImage.sprite = weaponManager.GetWeaponAt(weaponNumber).GetComponent<SpriteRenderer>().sprite;
+        //swordName.text = "" + weaponManager.GetWeaponAt(weaponNumber).weaponName;
+        //swordDamage.text = "Daño: " + weaponManager.GetWeaponAt(weaponNumber).damage;
+        //swordImage.sprite = weaponManager.GetWeaponAt(weaponNumber).GetComponent<SpriteRenderer>().sprite;
 
         if (inventoryPanel.activeInHierarchy)
         {

@@ -11,6 +11,8 @@ public class HealthManager : MonoBehaviour
     public float flashLength;
     private float flashCounter;
     private SpriteRenderer _characterRenderer;
+    public GameObject bloodAnim;
+    private GameObject bloodPoint;
     //private QuestEnemy quest;
     //private QuestManager questManager;
     //private ItemsManager itemsManager;
@@ -26,10 +28,10 @@ public class HealthManager : MonoBehaviour
 
         //quest = GetComponent<QuestEnemy>();
         //questManager = FindObjectOfType<QuestManager>();
-
-        maxHealth = 100;
         currentHealth = maxHealth;
         flashActive = true;
+
+        bloodPoint = transform.Find("Blood Point").gameObject;
 
         StartCoroutine(addHealth());
 
@@ -69,7 +71,7 @@ public class HealthManager : MonoBehaviour
     {
         //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.HIT);
 
-        //Health -= damage;
+        
         currentHealth -= damage;
 
         if (gameObject.name.Equals("Player"))
@@ -80,6 +82,7 @@ public class HealthManager : MonoBehaviour
         else if (gameObject.tag.Equals("Enemy"))
         {
             //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.ATTACK);
+            
 
         }
 
@@ -95,6 +98,8 @@ public class HealthManager : MonoBehaviour
                 //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIE);
                 isDead = true;
             }
+
+            Instantiate(bloodAnim, bloodPoint.transform.position, bloodPoint.transform.rotation);
 
             gameObject.SetActive(false);
         }

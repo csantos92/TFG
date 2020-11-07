@@ -12,8 +12,6 @@ public class WeaponDamage : MonoBehaviour
     public GameObject canvasDamage;
     private GameObject hitPoint;
 
-   
-
     private void Start()
     {
         hitPoint = transform.Find("Hit Point").gameObject;
@@ -23,12 +21,11 @@ public class WeaponDamage : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Enemy"))
         {
-
             int totalDamage = damage;
 
-            if(Random.Range(0, 10) < 20)
+            if(Random.Range(0, 10) < 2)
             {
-                totalDamage = damage - 1;
+                totalDamage = 0;
             }
 
             if(bloodAnim != null && hitPoint != null){

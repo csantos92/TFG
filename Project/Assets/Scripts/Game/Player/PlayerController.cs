@@ -15,10 +15,9 @@ public class PlayerController : MonoBehaviour
     public string nextUuid;
     private Animator _animator;
     private Rigidbody2D _rigidbody;
-    public bool upPressed;
-    public bool downPressed;
-    public bool leftPressed;
-    public bool rightPressed;
+    public bool upPressed, downPressed, leftPressed, rightPressed, attackPressed;
+    public float attackTime;
+    private float attackTimeCounter;
     public HealthManager _healthManager;
 
     // Get player component
@@ -27,8 +26,8 @@ public class PlayerController : MonoBehaviour
         _animator = GameObject.Find("Player").GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _healthManager = FindObjectOfType<HealthManager>();
-
         playerCreated = true;
+
     }
 
     // Player movements
@@ -56,6 +55,19 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow)) { ButtonLeftReleased(); }
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) { ButtonRightPressed(); }
         if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow)) { ButtonRightReleased(); }
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)) { ButtonAttack(); }
+
+        if (attackPressed)
+        {
+            attackTimeCounter -= Time.deltaTime;
+
+            if (attackTimeCounter < 0)
+            {
+                attackPressed = false;
+                _animator.SetBool(ATT, false);
+            }
+
+        }
 
         if (upPressed)
         {
@@ -88,6 +100,7 @@ public class PlayerController : MonoBehaviour
             lastMovement = new Vector2(1, 0);
             _animator.SetFloat(AXIS_H, 1);
         }
+
     }
 
     //If player it's not moving then set velocity to zero
@@ -145,4 +158,11 @@ public class PlayerController : MonoBehaviour
         rightPressed = false;
     }
 
+    public void ButtonAttack()
+    {
+        attackTimeCounter = attackTime;
+        _rigidbody.velocity = Vector2.zero;
+        _animator.SetBool(ATT, true);
+        attackPressed = true;
+    }
 }
