@@ -67,11 +67,11 @@
     <Compile Include="Assets\Scripts\Game\NPCs\EnemyController.cs" />
     <Compile Include="Assets\Scripts\Game\Destroy\DestroyAfterTime.cs" />
     <Compile Include="Assets\Scripts\Menu\GoTo.cs" />
+    <Compile Include="Assets\Scripts\Game\Others\ParticleLayer.cs" />
     <Compile Include="Assets\Scripts\Game\Camera\CameraLimits.cs" />
     <Compile Include="Assets\Scripts\Game\NPCs\NpcMovement.cs" />
     <Compile Include="Assets\Scripts\Game\Inventory\InventoryButton.cs" />
     <Compile Include="Assets\Scripts\Game\Inventory\Items.cs" />
-    <Compile Include="Assets\Scripts\Game\Others\ParticleLayer.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

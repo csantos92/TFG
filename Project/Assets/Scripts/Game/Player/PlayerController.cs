@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public float attackTime;
     private float attackTimeCounter;
     public HealthManager _healthManager;
+    public ItemsManager _itemsManager;
 
     // Get player component
     void Start()
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
         _animator = GameObject.Find("Player").GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _healthManager = FindObjectOfType<HealthManager>();
+        _itemsManager = FindObjectOfType<ItemsManager>();
         playerCreated = true;
 
     }
@@ -56,6 +58,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) { ButtonRightPressed(); }
         if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow)) { ButtonRightReleased(); }
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)) { ButtonAttack(); }
+        if (Input.GetKeyDown(KeyCode.C)) { DrinkPotion(); }
 
         if (attackPressed)
         {
@@ -164,5 +167,10 @@ public class PlayerController : MonoBehaviour
         _rigidbody.velocity = Vector2.zero;
         _animator.SetBool(ATT, true);
         attackPressed = true;
+    }
+
+    public void DrinkPotion()
+    {
+        _itemsManager.UseItem();
     }
 }

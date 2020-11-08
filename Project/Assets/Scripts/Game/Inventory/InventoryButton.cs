@@ -13,24 +13,18 @@ public class InventoryButton : MonoBehaviour
     
     public void ActivateButton()
     {
-
         switch (type)
         {
             case ItemType.WEAPON:
                 FindObjectOfType<WeaponManager>().ChangeWeapon(itemIdx);
                 FindObjectOfType<UIManager>().inventoryText.text = "Te has equipado: " + FindObjectOfType<WeaponManager>().GetWeaponAt(itemIdx).weaponName;
                 //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
+                break;
 
-                break;
-            case ItemType.ITEM:
-                FindObjectOfType<ItemsManager>().UseItem(itemIdx);
-                FindObjectOfType<UIManager>().inventoryText.text = "Has utilizado: " + FindObjectOfType<ItemsManager>().GetRegularItemAt(itemIdx).name;
-                break;
             case ItemType.SPECIAL_ITEMS:
                 //QuestItem item = FindObjectOfType<ItemsManager>().GetItemAt(itemIdx);
                 //FindObjectOfType<UIManager>().inventoryText.text = item.itemName;
                 //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
-
                 break;
         }
     }

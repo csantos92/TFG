@@ -19,6 +19,7 @@ public class WeaponManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        activeWeapon = 0;
         weapons = new List<GameObject>();
         foreach(Transform weapon in transform)
         {

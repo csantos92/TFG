@@ -11,8 +11,10 @@ public class HealthManager : MonoBehaviour
     public float flashLength;
     private float flashCounter;
     private SpriteRenderer _characterRenderer;
+    private SpriteRenderer[] sprites;
     public GameObject bloodAnim;
     private GameObject bloodPoint;
+    public GameObject player;
     //private QuestEnemy quest;
     //private QuestManager questManager;
     private ItemsManager itemsManager;
@@ -24,8 +26,11 @@ public class HealthManager : MonoBehaviour
     {
         reset = FindObjectOfType<GoTo>();
         _characterRenderer = GetComponent<SpriteRenderer>();
+        sprites = player.GetComponentsInChildren<SpriteRenderer>();
         itemsManager = GetComponent<ItemsManager>();
 
+
+       
         //quest = GetComponent<QuestEnemy>();
         //questManager = FindObjectOfType<QuestManager>();
         currentHealth = maxHealth;
@@ -60,8 +65,6 @@ public class HealthManager : MonoBehaviour
 
             }
         }
-
-
     }
 
     public void DamageCharacter(int damage)
@@ -115,6 +118,27 @@ public class HealthManager : MonoBehaviour
                                                 _characterRenderer.color.g,
                                                 _characterRenderer.color.b,
                                                 (visible ? 1 : 0));
+ 
+        foreach(SpriteRenderer s in sprites)
+        {
+            if (s.gameObject.activeInHierarchy)
+            {
+                s.color = new Color(s.color.r,
+                                         s.color.g,
+                                         s.color.b,
+                                         (visible ? 1 : 0));
+            }
+        }
+       
+    }
+
+    public void Heal()
+    {
+        if (gameObject.name.Equals("Player"))
+        {
+            //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIE);
+            currentHealth += 30;
+        }
     }
 
 }

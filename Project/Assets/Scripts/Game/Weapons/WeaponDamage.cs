@@ -30,11 +30,9 @@ public class WeaponDamage : MonoBehaviour
 
             if(bloodAnim != null && hitPoint != null){
                 Destroy(Instantiate(bloodAnim, hitPoint.transform.position, hitPoint.transform.rotation), 0.5f);
-
             }
 
             var clone = (GameObject)Instantiate(canvasDamage, hitPoint.transform.position, Quaternion.Euler(Vector3.zero));
-
             clone.GetComponent<DamageNumber>().damagePoints = totalDamage;
 
             collision.gameObject.GetComponent<HealthManager>().DamageCharacter(totalDamage);

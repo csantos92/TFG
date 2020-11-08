@@ -5,18 +5,15 @@ using UnityEngine.UI;
 
 public class ItemsManager : MonoBehaviour
 {
-    private HealthManager healthManager;
+    private HealthManager _healthManager;
     public Text potionCount;
-    private int count = 0;
+    private int count = 0, hp = 0;
     public GameObject potionCanvas;
-    private Items potion;
     public GameObject player;
 
     private void Start()
     {
-        healthManager = FindObjectOfType<HealthManager>();
-        potion = FindObjectOfType<Items>();
-
+        _healthManager = player.GetComponentInChildren<HealthManager>();
     }
 
     private void Update()
@@ -78,24 +75,29 @@ public class ItemsManager : MonoBehaviour
 
     }
 
-    public void UseItem(int idx)
+    public void UseItem()
     {
-        for (int i = 0; i < items.Count; i++)
+        if (items.Count >= 1 && _healthManager.currentHealth < 100)
         {
-            if (items[i] != null)
+            if(_healthManager.currentHealth <= 70)
             {
-                var clone = (GameObject)Instantiate(potionCanvas, player.transform.position, Quaternion.Euler(Vector3.zero));
-                clone.GetComponent<DamageNumber>().damagePoints = healthManager.maxHealth;
-
-                //healthManager.Heal();
-                RemoveItem(items[idx]);
-                //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DRINK);
-
-                return;
+                hp = 30;
+                _healthManager.currentHealth += 30;
             }
-        }
-    }
+            else
+            {
+                hp = 100 - _healthManager.currentHealth;
+                _healthManager.currentHealth = 100;
+            }
+            
+            RemoveItem(items[items.Count - 1]);
 
+            var clone = (GameObject)Instantiate(potionCanvas, player.transform.position, Quaternion.Euler(Vector3.zero));
+            clone.GetComponent<DamageNumber>().damagePoints = hp;
+            //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DRINK);
+        }
+        
+    }
 
     public void AddItem(GameObject item)
     {

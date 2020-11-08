@@ -15,11 +15,9 @@ public class Items : MonoBehaviour
     {
         if (collision.gameObject.name.Equals("Player"))
         {
-
             itemsManager.AddItem(this.gameObject);
             this.gameObject.SetActive(false);
             //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.GRAB);
-
         }
     }
 }
