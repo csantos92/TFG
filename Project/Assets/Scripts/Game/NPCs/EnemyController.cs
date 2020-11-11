@@ -8,8 +8,8 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D _rigidBody;
     private Animator _animator;
 
-    public bool isWalking = false;
-    public bool isTalking;
+    public bool isWalking;
+    //public bool isTalking;
     private bool playerInTheZone;
 
     public float walkTime = 1.5f;
@@ -38,7 +38,6 @@ public class EnemyController : MonoBehaviour
         _animator = GetComponent<Animator>();
         waitCounter = waitTime;
         walkCounter = walkTime;
-        isTalking = false;
         //dialogueManager = FindObjectOfType<DialogueManager>();
         player = GameObject.Find("Player");
     }
@@ -48,15 +47,33 @@ public class EnemyController : MonoBehaviour
     {
         if (playerInTheZone)
         {
-            if (transform.position.x < player.transform.position.x)
+            if (((transform.position.x - player.transform.position.x < 1 && transform.position.x - player.transform.position.x > 0) || (transform.position.x - player.transform.position.x > -1 && transform.position.x - player.transform.position.x < 0)) && transform.position.y < player.transform.position.y)
             {
                 walkTime = 30;
-                StartWalking(3);
+                StartWalking(0);
+                walkCounter = walkTime;
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
                 //EnemyFix();
             }
 
-            if (transform.position.x > player.transform.position.x)
+            else if (((transform.position.x - player.transform.position.x < 1 && transform.position.x - player.transform.position.x >= 0) || (transform.position.x - player.transform.position.x > -1 && transform.position.x - player.transform.position.x <= 0)) && transform.position.y > player.transform.position.y)
+            {
+                walkTime = 30;
+                StartWalking(1);
+                walkCounter = walkTime;
+                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+                //EnemyFix();
+            }
+            else if (((transform.position.y - player.transform.position.y < 1 && transform.position.y - player.transform.position.y >= 0) || (transform.position.y - player.transform.position.y > -1 && transform.position.y - player.transform.position.y <= 0)) && transform.position.x < player.transform.position.x)
+            {
+                walkTime = 30;
+                StartWalking(3);
+                walkCounter = walkTime;
+                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+                //EnemyFix();
+            }
+
+            else if (((transform.position.y - player.transform.position.y < 1 && transform.position.y - player.transform.position.y > 0) || (transform.position.y - player.transform.position.y > -1 && transform.position.y - player.transform.position.y < 0)) && transform.position.x > player.transform.position.x)
             {
                 walkTime = 30;
                 StartWalking(2);
@@ -64,30 +81,15 @@ public class EnemyController : MonoBehaviour
                 //EnemyFix();
             }
 
-            if (transform.position.y < player.transform.position.y)
-            {
-                walkTime = 30;
-                StartWalking(0);
-                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-               // EnemyFix();
-            }
-
-            if (transform.position.y > player.transform.position.y)
-            {
-                walkTime = 30;
-                StartWalking(1);
-                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-               // EnemyFix();
-            }
         }
 
-            if (isTalking)
+            /*if (isTalking)
         {
             //isTalking = dialogueManager.dialogueActive;
             StopWalking();
             return;
         }
-
+        */
         if (isWalking)
         {
             if (this.transform.position.x < enemyZone.bounds.min.x ||
