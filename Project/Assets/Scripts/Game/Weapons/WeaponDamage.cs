@@ -7,7 +7,7 @@ public class WeaponDamage : MonoBehaviour
     [Tooltip("Cantidad de daño que hará la espada")]
     public int damage;
     public string weaponName;
-
+    private int random;
     public GameObject bloodAnim;
     public GameObject canvasDamage;
     private GameObject hitPoint;
@@ -19,16 +19,28 @@ public class WeaponDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("Enemy"))
+        if (collision.gameObject.tag.Equals("Enemy") || collision.gameObject.name.Equals("Player"))
         {
             int totalDamage = damage;
 
-            if(Random.Range(0, 10) < 2)
+            //Calcula la suerte para el fallo del enemigo
+            random = Random.Range(0, 100);
+
+            //Calcula la suerte para el fallo 
+            if (random < 5)
             {
-                totalDamage = 0;
+                totalDamage = damage / 4;
+            }
+            else if (random >= 5 && random <= 10)
+            {
+                totalDamage = damage / 3;
+            }
+            else if (random > 10 && random < 20)
+            {
+                totalDamage = damage / 2;
             }
 
-            if(bloodAnim != null && hitPoint != null){
+            if (bloodAnim != null && hitPoint != null){
                 Destroy(Instantiate(bloodAnim, hitPoint.transform.position, hitPoint.transform.rotation), 0.5f);
             }
 

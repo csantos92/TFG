@@ -6,18 +6,16 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public static bool playerCreated;
-    public bool canMove = true;
-    public bool isTalking;
-    public float speed = 5.0f;
     private const string AXIS_H = "Horizontal", AXIS_V = "Vertical", ATT = "Attacking";
-    private bool walking;
-    public Vector2 lastMovement = Vector2.zero;
+ 
+    public Vector2 lastMovement, currentMovement;
     public string nextUuid;
+    public bool upPressed, downPressed, leftPressed, rightPressed, attackPressed, canMove, isTalking;
+    public float attackTime, speed;
+    private float attackTimeCounter;
+    private bool walking;
     private Animator _animator;
     private Rigidbody2D _rigidbody;
-    public bool upPressed, downPressed, leftPressed, rightPressed, attackPressed;
-    public float attackTime;
-    private float attackTimeCounter;
     public HealthManager _healthManager;
     public ItemsManager _itemsManager;
 
@@ -29,7 +27,10 @@ public class PlayerController : MonoBehaviour
         _healthManager = FindObjectOfType<HealthManager>();
         _itemsManager = FindObjectOfType<ItemsManager>();
         playerCreated = true;
-
+        canMove = true;
+        speed = 5.0f;
+        lastMovement = Vector2.zero;
+        currentMovement = Vector2.zero;
     }
 
     // Player movements
@@ -59,6 +60,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow)) { ButtonRightReleased(); }
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)) { ButtonAttack(); }
         if (Input.GetKeyDown(KeyCode.C)) { DrinkPotion(); }
+        if (Input.GetKeyDown(KeyCode.LeftShift)) { ShiftPressed(); }
+        if (Input.GetKeyUp(KeyCode.LeftShift)) { ShiftReleased(); }
 
         if (attackPressed)
         {
@@ -77,7 +80,8 @@ public class PlayerController : MonoBehaviour
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 1).normalized * speed;
             walking = true;
             lastMovement = new Vector2(0, 1);
-            _animator.SetFloat(AXIS_V, 1);
+            //_animator.SetFloat(AXIS_V, 1);
+            currentMovement = new Vector2(0, 1);
         }
 
         if (downPressed)
@@ -85,7 +89,8 @@ public class PlayerController : MonoBehaviour
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, -1).normalized * speed;
             walking = true;
             lastMovement = new Vector2(0, -1);
-            _animator.SetFloat(AXIS_V, -1);
+            currentMovement = new Vector2(0, -1);
+            //_animator.SetFloat(AXIS_V, -1);
         }
 
         if (leftPressed)
@@ -93,7 +98,8 @@ public class PlayerController : MonoBehaviour
             _rigidbody.velocity = new Vector2(-1, _rigidbody.velocity.y).normalized * speed;
             walking = true;
             lastMovement = new Vector2(-1, 0);
-            _animator.SetFloat(AXIS_H, -1);
+            currentMovement = new Vector2(-1, 0);
+            //_animator.SetFloat(AXIS_H, -1);
         }
 
         if (rightPressed)
@@ -101,7 +107,8 @@ public class PlayerController : MonoBehaviour
             _rigidbody.velocity = new Vector2(1, _rigidbody.velocity.y).normalized * speed;
             walking = true;
             lastMovement = new Vector2(1, 0);
-            _animator.SetFloat(AXIS_H, 1);
+            currentMovement = new Vector2(1, 0);
+            //_animator.SetFloat(AXIS_H, 1);
         }
 
     }
@@ -115,8 +122,8 @@ public class PlayerController : MonoBehaviour
             _rigidbody.velocity = Vector2.zero;
         }
 
-        _animator.SetFloat(AXIS_H, Input.GetAxisRaw(AXIS_H));
-        _animator.SetFloat(AXIS_V, Input.GetAxisRaw(AXIS_V));
+        _animator.SetFloat(AXIS_H, currentMovement.x);
+        _animator.SetFloat(AXIS_V, currentMovement.y);
         _animator.SetBool("Walking", walking);
         _animator.SetFloat("LastH", lastMovement.x);
         _animator.SetFloat("LastV", lastMovement.y);
@@ -159,6 +166,16 @@ public class PlayerController : MonoBehaviour
     public void ButtonRightReleased()
     {
         rightPressed = false;
+    }
+
+    public void ShiftPressed()
+    {
+        speed = 6.0f;
+    }
+
+    public void ShiftReleased()
+    {
+        speed = 5.0f;
     }
 
     public void ButtonAttack()

@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class DamagePlayer : MonoBehaviour
 {
+    [Tooltip("Cantidad de daño que hará la espada")]
     public int damage;
     private int random;
-    public GameObject canvasDamage;
+    public GameObject bloodAnim, canvasDamage;
+    private GameObject hitPoint;
+
+    private void Start()
+    {
+        hitPoint = transform.Find("Hit Point").gameObject;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -17,6 +24,7 @@ public class DamagePlayer : MonoBehaviour
             //Calcula la suerte para el fallo del enemigo
             random = Random.Range(0, 100);
 
+            //Calcula la suerte para el fallo 
             if (random < 5)
             {
                 totalDamage = damage / 4;
@@ -30,11 +38,15 @@ public class DamagePlayer : MonoBehaviour
                 totalDamage = damage / 2;
             }
 
-            var clone = (GameObject)Instantiate(canvasDamage, collision.gameObject.transform.position, Quaternion.Euler(Vector3.zero));
+            if (bloodAnim != null && hitPoint != null)
+            {
+                Destroy(Instantiate(bloodAnim, hitPoint.transform.position, hitPoint.transform.rotation), 0.5f);
+            }
+
+            var clone = (GameObject)Instantiate(canvasDamage, hitPoint.transform.position, Quaternion.Euler(Vector3.zero));
             clone.GetComponent<DamageNumber>().damagePoints = totalDamage;
 
             collision.gameObject.GetComponent<HealthManager>().DamageCharacter(totalDamage);
-
         }
     }
 }
