@@ -4,33 +4,24 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    public int maxHealth;
-    public int currentHealth;
-    public bool flashActive;
-    public bool isDead;
+    public int maxHealth, currentHealth;
+    public bool flashActive, isDead;
     public float flashLength;
     private float flashCounter;
     private SpriteRenderer _characterRenderer;
     private SpriteRenderer[] sprites;
-    public GameObject bloodAnim;
-    private GameObject bloodPoint;
-    public GameObject player;
+    public GameObject bloodAnim, bloodPoint;
     //private QuestEnemy quest;
     //private QuestManager questManager;
     private ItemsManager itemsManager;
 
-    private GoTo reset;
-
     // Start is called before the first frame update
     void Start()
     {
-        reset = FindObjectOfType<GoTo>();
         _characterRenderer = GetComponent<SpriteRenderer>();
-        sprites = player.GetComponentsInChildren<SpriteRenderer>();
+        sprites = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<SpriteRenderer>();
         itemsManager = GetComponent<ItemsManager>();
 
-
-       
         //quest = GetComponent<QuestEnemy>();
         //questManager = FindObjectOfType<QuestManager>();
         currentHealth = maxHealth;
@@ -106,7 +97,7 @@ public class HealthManager : MonoBehaviour
 
         if(flashLength > 0)
         {
-            GetComponent<BoxCollider2D>().enabled = false;
+            //GetComponent<BoxCollider2D>().enabled = false;
             flashActive = true;
             flashCounter = flashLength;
         }

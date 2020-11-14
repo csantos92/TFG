@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rigidbody;
     public HealthManager _healthManager;
     public ItemsManager _itemsManager;
+    public NPCDialogue _npcDialogue;
 
     // Get player component
     void Start()
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _healthManager = FindObjectOfType<HealthManager>();
         _itemsManager = FindObjectOfType<ItemsManager>();
+        _npcDialogue = FindObjectOfType<NPCDialogue>();
         playerCreated = true;
         canMove = true;
         speed = 5.0f;
@@ -62,6 +64,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C)) { DrinkPotion(); }
         if (Input.GetKeyDown(KeyCode.LeftShift)) { ShiftPressed(); }
         if (Input.GetKeyUp(KeyCode.LeftShift)) { ShiftReleased(); }
+        if (Input.GetKeyDown(KeyCode.F)) { StartTalk(); }
 
         if (attackPressed)
         {
@@ -189,5 +192,10 @@ public class PlayerController : MonoBehaviour
     public void DrinkPotion()
     {
         _itemsManager.UseItem();
+    }
+
+    public void StartTalk()
+    {
+        _npcDialogue.StartTalk();
     }
 }

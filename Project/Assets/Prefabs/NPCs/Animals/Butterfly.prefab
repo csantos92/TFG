@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1670106457715593830}
   - component: {fileID: 1670106457715593831}
   - component: {fileID: 1670106457715593828}
+  - component: {fileID: 4581289475019071725}
   m_Layer: 0
   m_Name: Butterfly
   m_TagString: Untagged
@@ -31,7 +32,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -899.75, y: -473.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4452229463248508660}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -171,3 +173,47 @@ MonoBehaviour:
   waitTime: 0.05
   directionToMove: {x: 0, y: 0}
   npcZone: {fileID: 0}
+--- !u!114 &4581289475019071725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670106457715593826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e5f461d1b2cdf4e9678aa13172147b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloodAnim: {fileID: 3353665896398215710, guid: bb4c32f2e5e915b4a8dc0cd70c71c524, type: 3}
+  bloodPoint: {fileID: 8566144412401617682}
+--- !u!1 &8566144412401617682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4452229463248508660}
+  m_Layer: 0
+  m_Name: Blood Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4452229463248508660
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8566144412401617682}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1670106457715593825}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

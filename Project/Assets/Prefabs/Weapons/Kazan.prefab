@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6426703593561030869}
   m_Layer: 0
   m_Name: Kazan
-  m_TagString: Untagged
+  m_TagString: Katana
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

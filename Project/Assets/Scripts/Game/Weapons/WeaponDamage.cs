@@ -19,7 +19,7 @@ public class WeaponDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("Enemy") || collision.gameObject.name.Equals("Player"))
+        if (collision.gameObject.tag.Equals("Enemy"))
         {
             int totalDamage = damage;
 
