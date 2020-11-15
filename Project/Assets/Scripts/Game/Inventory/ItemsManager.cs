@@ -34,7 +34,7 @@ public class ItemsManager : MonoBehaviour
     {
         return questItems;
     }
-    /*
+    
     public QuestItem GetItemAt(int idx)
     {
         return questItems[idx].GetComponent<QuestItem>();
@@ -50,7 +50,7 @@ public class ItemsManager : MonoBehaviour
             }
         }
         return false;
-    }*/
+    }
 
     public void AddQuestItem(GameObject newItem)
     {

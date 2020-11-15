@@ -22,8 +22,8 @@ public class InventoryButton : MonoBehaviour
                 break;
 
             case ItemType.SPECIAL_ITEMS:
-                //QuestItem item = FindObjectOfType<ItemsManager>().GetItemAt(itemIdx);
-                //FindObjectOfType<UIManager>().inventoryText.text = item.itemName;
+                QuestItem item = FindObjectOfType<ItemsManager>().GetItemAt(itemIdx);
+                FindObjectOfType<UIManager>().inventoryText.text = item.itemName;
                 //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
                 break;
         }
