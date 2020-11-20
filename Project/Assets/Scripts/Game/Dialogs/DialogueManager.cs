@@ -10,14 +10,14 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialogueBox, dialogueBoxTitle;
     public Text dialogueTitleText, dialogueText;
     public Image avatarImage;
-    public bool dialogueActive;
+    public bool dialogueActive, finishQuestByTalking;
 
     public string[] dialogueLines;
     public int currentDialogueLine;
 
     private PlayerController playerController;
     public Animator _animator;
-
+    private NPCDialogue _npcDialogue;
     public Button talkButton;
 
 
@@ -28,6 +28,7 @@ public class DialogueManager : MonoBehaviour
         dialogueBoxTitle.SetActive(false);
 
         playerController = FindObjectOfType<PlayerController>();
+        _npcDialogue = FindObjectOfType<NPCDialogue>();
 
         Button btn = talkButton.GetComponent<Button>();
         btn.onClick.AddListener(ContinueTalk);
@@ -44,7 +45,6 @@ public class DialogueManager : MonoBehaviour
             currentDialogueLine++;
             //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
 
-
             if (currentDialogueLine >= dialogueLines.Length)
             {
                 playerController.isTalking = false;
@@ -56,13 +56,18 @@ public class DialogueManager : MonoBehaviour
                 _animator.enabled = true;
                 //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIALOG);
 
+                if (finishQuestByTalking)
+                {
+                    _npcDialogue.FinishQuest();
+                    finishQuestByTalking = false;
+                }
+                
             }
             else
             {
                 dialogueText.text = dialogueLines[currentDialogueLine];
             }
-
-        }
+        } 
     }
 
     public void ShowDialogue(string[] lines, string npcName)
@@ -70,15 +75,12 @@ public class DialogueManager : MonoBehaviour
         ShowDialogueFill(lines);
         dialogueTitleText.text = npcName;
         //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIALOG);
-
     }
 
     public void ShowDialogue(string[] lines)
     {
         ShowDialogueFill(lines);
-
         //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIALOG);
-
     }
 
     public void ShowDialogue(string[] lines, string npcName, Sprite sprite)
@@ -87,7 +89,6 @@ public class DialogueManager : MonoBehaviour
         avatarImage.enabled = true;
         avatarImage.sprite = sprite;
         //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIALOG);
-
     }
 
     private void ShowDialogueFill(string[] lines)

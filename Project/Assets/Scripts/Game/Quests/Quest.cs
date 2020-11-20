@@ -9,7 +9,8 @@ public class Quest : MonoBehaviour
     public int questID;
     private QuestManager questManager;
     public string startText, completeText, title;
-    public bool needsItem, killsEnemy, questCompleted;
+    public Sprite npcSprite;
+    public bool needsItem, killEnemy, questCompleted;
     public List<QuestItem> itemsNeeded;
     public List<QuestEnemy> enemies;
     public List<int> numberOfEnemies;
@@ -32,7 +33,7 @@ public class Quest : MonoBehaviour
             ActivateItems();
         }
 
-        if (killsEnemy)
+        if (killEnemy)
         {
             ActivateEnemies();
         }
@@ -41,14 +42,14 @@ public class Quest : MonoBehaviour
     public void StartQuest()
     {
         questManager = FindObjectOfType<QuestManager>();
-        questManager.ShowQuestText(startText, title);
+        questManager.ShowQuestText(startText, title, npcSprite);
 
         if (needsItem)
         {
             ActivateItems();
         }
 
-        if (killsEnemy)
+        if (killEnemy)
         {
             ActivateEnemies();
         }
@@ -81,10 +82,9 @@ public class Quest : MonoBehaviour
     public void CompleteQuest()
     {
         questManager = FindObjectOfType<QuestManager>();
-        questManager.ShowQuestText(completeText, title);
+        questManager.ShowQuestText(completeText, title, npcSprite);
         questCompleted = true;
         //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.QUEST);
-
 
         if (nextQuest != null)
         {
@@ -121,7 +121,7 @@ public class Quest : MonoBehaviour
             }
         }
 
-        if(killsEnemy && questManager.enemyKilled != null)
+        if(killEnemy && questManager.enemyKilled != null)
         {
             for(int i = 0; i < enemies.Count; i++)
             {

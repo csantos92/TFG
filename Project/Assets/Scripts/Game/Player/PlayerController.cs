@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C)) { DrinkPotion(); }
         if (Input.GetKeyDown(KeyCode.LeftShift)) { ShiftPressed(); }
         if (Input.GetKeyUp(KeyCode.LeftShift)) { ShiftReleased(); }
-        if (Input.GetKeyDown(KeyCode.F)) { StartTalk(); }
+        if (Input.GetKeyDown(KeyCode.Q)) { StartTalk(); }
 
         if (attackPressed)
         {

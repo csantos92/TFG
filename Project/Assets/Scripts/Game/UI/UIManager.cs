@@ -7,7 +7,7 @@ using System.Text;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject inventoryPanel, mainPanel, menuPanel, itemsPanel, questsPanel, statsPanel, gameOver, sortingPanel;
+    public GameObject inventoryPanel, mainPanel, menuPanel, itemsPanel, questsPanel, statsPanel, gameOver;
 
 
     public Slider playerHealthBar, playerHealthBar2;
@@ -35,7 +35,6 @@ public class UIManager : MonoBehaviour
         questsPanel.SetActive(false);
         statsPanel.SetActive(false);
         gameOver.SetActive(false);
-        sortingPanel.SetActive(false);
     }
 
     //Open or close pause menu
@@ -94,7 +93,6 @@ public class UIManager : MonoBehaviour
         itemsPanel.SetActive(false);
         questsPanel.SetActive(false);
         statsPanel.SetActive(false);
-        sortingPanel.SetActive(false);
         inventoryText.text = "";
     }
 
@@ -104,7 +102,6 @@ public class UIManager : MonoBehaviour
         questsPanel.SetActive(true);
         statsPanel.SetActive(false);
         itemsPanel.SetActive(false);
-        sortingPanel.SetActive(false);
         inventoryText.text = "Misiones";
     }
 
@@ -114,7 +111,6 @@ public class UIManager : MonoBehaviour
         statsPanel.SetActive(true);
         questsPanel.SetActive(false);
         itemsPanel.SetActive(false);
-        sortingPanel.SetActive(false);
         inventoryText.text = "Estado";
     }
 
@@ -123,7 +119,6 @@ public class UIManager : MonoBehaviour
         itemsPanel.SetActive(true);
         questsPanel.SetActive(false);
         statsPanel.SetActive(false);
-        sortingPanel.SetActive(true);
         inventoryText.text = "Inventario";
 
         //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);

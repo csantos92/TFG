@@ -3,26 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(CircleCollider2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class NPCDialogue : MonoBehaviour
 {
 
     public string npcName;
     public string[] npcDialogueLines;
     public Sprite npcSprite;
-
     private DialogueManager dialogueManager;
     private bool playerInTheZone;
-
-    //private Button startTalkButton;
+    public bool automaticTalk, finishQuestByTalk;
+    public GameObject finishQuest;
 
     // Start is called before the first frame update
     void Start()
     {
         dialogueManager = FindObjectOfType<DialogueManager>();
+    }
 
-        //startTalkButton = GameObject.Find("Talk").GetComponent<Button>();
-        //startTalkButton.onClick.AddListener(StartTalk);
+    void Update()
+    {
+        if(playerInTheZone && automaticTalk)
+        {
+            StartTalk();
+            automaticTalk = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -45,7 +50,6 @@ public class NPCDialogue : MonoBehaviour
     {
         if (playerInTheZone)
         {
-
             string[] finalDialogue = new string[npcDialogueLines.Length];
 
             int i = 0;
@@ -55,31 +59,32 @@ public class NPCDialogue : MonoBehaviour
                 i++;
             }
 
-
-            /*if (npcName != null)
-            {
-                finalDialogue = npcName + "\n\n" + npcDialogue;
-            }
-            else
-            {
-                finalDialogue = npcDialogue;
-            }*/
-
             if (npcSprite != null)
             {
                 dialogueManager.ShowDialogue(finalDialogue, npcName, npcSprite);
 
+                if (finishQuestByTalk)
+                {
+                    dialogueManager.finishQuestByTalking = true;
+                }
             }
             else
             {
                 dialogueManager.ShowDialogue(finalDialogue, npcName);
-
             }
 
             if (gameObject.GetComponentInParent<NpcMovement>() != null)
             {
                 gameObject.GetComponentInParent<NpcMovement>().isTalking = true;
             }
+        }
+    }
+
+    public void FinishQuest()
+    {
+        if (finishQuest != null && !finishQuest.activeInHierarchy && finishQuestByTalk)
+        {
+            finishQuest.SetActive(true);
         }
     }
 }

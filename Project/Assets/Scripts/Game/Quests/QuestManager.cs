@@ -5,14 +5,11 @@ using UnityEngine.UI;
 
 public class QuestManager : MonoBehaviour
 {
-
     public List<Quest> quests;
     private DialogueManager dialogueManager;
     public QuestItem itemCollected;
     public QuestEnemy enemyKilled;
-
     public Animator _animator;
-
     public Text questTitle, questMessage;
 
     // Start is called before the first frame update
@@ -26,12 +23,20 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    public void ShowQuestText(string questText, string title)
+    public void ShowQuestText(string questText, string title, Sprite npcSprite)
     {
         _animator.enabled = false;
         questTitle.text = title;
         questMessage.text = questText;
-        dialogueManager.ShowDialogue(new string[] { questText }, title);
+
+        if (npcSprite != null)
+        {
+             dialogueManager.ShowDialogue(new string[] { questText }, title, npcSprite);
+        }
+        else
+        {
+            dialogueManager.ShowDialogue(new string[] { questText }, title);
+        }
 
     }
 
@@ -46,6 +51,7 @@ public class QuestManager : MonoBehaviour
             }
 
         }
+
         return q;
     }
 }
