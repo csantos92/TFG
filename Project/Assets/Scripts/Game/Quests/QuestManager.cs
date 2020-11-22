@@ -7,8 +7,6 @@ public class QuestManager : MonoBehaviour
 {
     public List<Quest> quests;
     private DialogueManager dialogueManager;
-    public QuestItem itemCollected;
-    public QuestEnemy enemyKilled;
     public Animator _animator;
     public Text questTitle, questMessage;
 
@@ -54,4 +52,5 @@ public class QuestManager : MonoBehaviour
 
         return q;
     }
+
 }

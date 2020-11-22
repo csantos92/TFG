@@ -28,6 +28,8 @@ public class NPCDialogue : MonoBehaviour
             StartTalk();
             automaticTalk = false;
         }
+
+        if (Input.GetKeyDown(KeyCode.Q)) { StartTalk(); }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

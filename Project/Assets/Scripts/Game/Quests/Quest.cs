@@ -11,72 +11,14 @@ public class Quest : MonoBehaviour
     public string startText, completeText, title;
     public Sprite npcSprite;
     public bool needsItem, killEnemy, questCompleted;
-    public List<QuestItem> itemsNeeded;
-    public List<QuestEnemy> enemies;
-    public List<int> numberOfEnemies;
+    public QuestItem item;
+    public QuestEnemy enemy;
     public Quest nextQuest;
-
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (needsItem)
-        {
-            ActivateItems();
-        }
-
-        if (killEnemy)
-        {
-            ActivateEnemies();
-        }
-    }
 
     public void StartQuest()
     {
         questManager = FindObjectOfType<QuestManager>();
         questManager.ShowQuestText(startText, title, npcSprite);
-
-        if (needsItem)
-        {
-            ActivateItems();
-        }
-
-        if (killEnemy)
-        {
-            ActivateEnemies();
-        }
-    }
-
-    void ActivateItems()
-    {
-        Object[] items = Resources.FindObjectsOfTypeAll(typeof(QuestItem));
-        foreach (QuestItem item in items)
-        {
-            if (item.questID == questID)
-            {
-                item.gameObject.SetActive(true);
-            }
-        }
-    }
-
-    void ActivateEnemies()
-    {
-        Object[] qenemies = Resources.FindObjectsOfTypeAll(typeof(QuestEnemy));
-        foreach (QuestEnemy enemy in qenemies)
-        {
-            if (enemy.questID == questID)
-            {
-                enemy.gameObject.SetActive(true);
-            }
-        }
     }
 
     public void CompleteQuest()
@@ -102,46 +44,14 @@ public class Quest : MonoBehaviour
 
     private void Update()
     {
-        if(needsItem && questManager.itemCollected != null)
+        if(needsItem && 1 == 0)
         {
-            for(int i = 0; i < itemsNeeded.Count; i++)
-            {
-                if(itemsNeeded[i].itemName == questManager.itemCollected.itemName)
-                {
-                    itemsNeeded.RemoveAt(i);
-                    questManager.itemCollected = null;
-
-                    break;
-                }
-            }
-
-            if(itemsNeeded.Count == 0)
-            {
-                CompleteQuest();
-            }
+            CompleteQuest();
         }
 
-        if(killEnemy && questManager.enemyKilled != null)
+        if(killEnemy && enemy.gameObject.GetComponent<HealthManager>().currentHealth <= 0)
         {
-            for(int i = 0; i < enemies.Count; i++)
-            {
-                if(enemies[i].enemyName == questManager.enemyKilled.enemyName)
-                {
-                    numberOfEnemies[i]--;
-                    questManager.enemyKilled = null;
-
-                    if (numberOfEnemies[i] <= 0)
-                    {
-                        enemies.RemoveAt(i);
-                        numberOfEnemies.RemoveAt(i);
-                    }
-                    break;
-                }
-            }
-            if(enemies.Count == 0)
-            {
-                CompleteQuest();
-            }
+            CompleteQuest();
         }
     }
 }
