@@ -11,15 +11,12 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueTitleText, dialogueText;
     public Image avatarImage;
     public bool dialogueActive, finishQuestByTalking;
-
     public string[] dialogueLines;
     public int currentDialogueLine;
-
     private PlayerController playerController;
     public Animator _animator;
     private NPCDialogue _npcDialogue;
     public Button talkButton;
-
 
     private void Start()
     {
@@ -34,9 +31,7 @@ public class DialogueManager : MonoBehaviour
         btn.onClick.AddListener(ContinueTalk);
 
         _animator = GameObject.Find("Player").GetComponent<Animator>();
-
     }
-
 
     public void ContinueTalk()
     {
@@ -60,6 +55,11 @@ public class DialogueManager : MonoBehaviour
                 {
                     _npcDialogue.FinishQuest();
                     finishQuestByTalking = false;
+                }
+
+                if (_npcDialogue.isBoss)
+                {
+                    _npcDialogue.enemyController.enabled = true;
                 }
                 
             }

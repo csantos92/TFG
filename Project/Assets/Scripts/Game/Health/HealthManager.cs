@@ -11,16 +11,12 @@ public class HealthManager : MonoBehaviour
     private SpriteRenderer _characterRenderer;
     private SpriteRenderer[] sprites;
     public GameObject bloodAnim, bloodPoint;
-    //private QuestEnemy quest;
-    //private QuestManager questManager;
-    private ItemsManager itemsManager;
 
     // Start is called before the first frame update
     void Start()
     {
         _characterRenderer = GetComponent<SpriteRenderer>();
         sprites = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<SpriteRenderer>();
-        itemsManager = GetComponent<ItemsManager>();
 
         //quest = GetComponent<QuestEnemy>();
         //questManager = FindObjectOfType<QuestManager>();
@@ -81,7 +77,7 @@ public class HealthManager : MonoBehaviour
         {
             if (gameObject.tag.Equals("Enemy"))
             {
-                //questManager.enemyKilled = quest;
+                this.transform.gameObject.GetComponentInChildren<NPCDialogue>().blockPaths.SetActive(false);
             }
 
             if (gameObject.name.Equals("Player"))

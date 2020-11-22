@@ -12,13 +12,19 @@ public class NPCDialogue : MonoBehaviour
     public Sprite npcSprite;
     private DialogueManager dialogueManager;
     private bool playerInTheZone;
-    public bool automaticTalk, finishQuestByTalk;
-    public GameObject finishQuest;
+    public bool automaticTalk, finishQuestByTalk, isBoss;
+    public GameObject finishQuest, blockPaths, boss;
+    public EnemyController enemyController;
 
     // Start is called before the first frame update
     void Start()
     {
         dialogueManager = FindObjectOfType<DialogueManager>();
+
+        if (isBoss)
+        {
+            enemyController = this.transform.gameObject.GetComponentInParent<EnemyController>();
+        }
     }
 
     void Update()
@@ -27,9 +33,16 @@ public class NPCDialogue : MonoBehaviour
         {
             StartTalk();
             automaticTalk = false;
+
+            if(isBoss && blockPaths != null)
+            {
+                blockPaths.SetActive(true);
+            }
+            
         }
 
         if (Input.GetKeyDown(KeyCode.Q)) { StartTalk(); }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

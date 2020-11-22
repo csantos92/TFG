@@ -5,7 +5,6 @@ using UnityEngine;
 public class NpcMovement : MonoBehaviour
 {
 
-
     public float speed = 1.5f;
     private Rigidbody2D _rigidBody;
     private Animator _animator;
