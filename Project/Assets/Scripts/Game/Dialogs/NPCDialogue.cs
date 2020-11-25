@@ -12,19 +12,13 @@ public class NPCDialogue : MonoBehaviour
     public Sprite npcSprite;
     private DialogueManager dialogueManager;
     private bool playerInTheZone;
-    public bool automaticTalk, finishQuestByTalk, isBoss;
+    public bool automaticTalk, finishQuestByTalk, isBoss, thisEnemyTalking, finishTalk;
     public GameObject finishQuest, blockPaths, boss;
-    public EnemyController enemyController;
 
     // Start is called before the first frame update
     void Start()
     {
         dialogueManager = FindObjectOfType<DialogueManager>();
-
-        if (isBoss)
-        {
-            enemyController = this.transform.gameObject.GetComponentInParent<EnemyController>();
-        }
     }
 
     void Update()
@@ -33,6 +27,7 @@ public class NPCDialogue : MonoBehaviour
         {
             StartTalk();
             automaticTalk = false;
+            thisEnemyTalking = true;
 
             if(isBoss && blockPaths != null)
             {
@@ -42,6 +37,11 @@ public class NPCDialogue : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Q)) { StartTalk(); }
+
+        if (isBoss && thisEnemyTalking && !dialogueManager.dialogueActive)
+        {
+            transform.parent.GetComponent<EnemyController>().enabled = true;
+        }
 
     }
 

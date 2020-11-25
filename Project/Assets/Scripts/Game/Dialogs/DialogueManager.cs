@@ -10,7 +10,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialogueBox, dialogueBoxTitle;
     public Text dialogueTitleText, dialogueText;
     public Image avatarImage;
-    public bool dialogueActive, finishQuestByTalking;
+    public bool dialogueActive, finishQuestByTalking, finishTalk;
     public string[] dialogueLines;
     public int currentDialogueLine;
     private PlayerController playerController;
@@ -55,11 +55,6 @@ public class DialogueManager : MonoBehaviour
                 {
                     _npcDialogue.FinishQuest();
                     finishQuestByTalking = false;
-                }
-
-                if (_npcDialogue.isBoss)
-                {
-                    _npcDialogue.enemyController.enabled = true;
                 }
                 
             }
