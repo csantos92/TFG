@@ -5,9 +5,7 @@ using UnityEngine.UI;
 
 public class InventoryButton : MonoBehaviour
 {
-
-    public enum ItemType { WEAPON, ITEM, SPECIAL_ITEMS};
-
+    public enum ItemType { WEAPON, SPECIAL_ITEMS};
     public int itemIdx;
     public ItemType type;
     

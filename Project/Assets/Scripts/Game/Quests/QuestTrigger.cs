@@ -5,11 +5,10 @@ using UnityEngine.UI;
 
 public class QuestTrigger : MonoBehaviour
 {
-
-    private QuestManager questManager;
     public int questID;
     public bool startPoint, endPoint, automaticCatch;
     private bool playerInZone;
+    private QuestManager questManager;
 
     // Start is called before the first frame update
     void Start()
@@ -65,11 +64,8 @@ public class QuestTrigger : MonoBehaviour
                             q.CompleteQuest();
                         }
                     }
-
                 }
             }
         }
     }
-
-
 }

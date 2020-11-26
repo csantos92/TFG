@@ -50,5 +50,4 @@ public class WeaponDamage : MonoBehaviour
             collision.gameObject.GetComponent<HealthManager>().DamageCharacter(totalDamage);
         }
     }
-
 }

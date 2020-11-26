@@ -5,12 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Camera))]
 public class CameraFollow : MonoBehaviour
 {
+    private float halfHeight, halfWidth, cameraSpeed = 5;
     public GameObject target;
-    private Vector3 targetPosition;
-    public float cameraSpeed = 5;
     private Camera theCamera;
-    private Vector3 minLimits, maxLimits;
-    private float halfHeight, halfWidth;
+    private Vector3 minLimits, maxLimits, targetPosition;
 
     //Camera limits
     public void ChangeLimits(BoxCollider2D cameraLimits)
@@ -28,7 +26,6 @@ public class CameraFollow : MonoBehaviour
     {
         float posX = Mathf.Clamp(this.target.transform.position.x, minLimits.x + halfWidth, maxLimits.x - halfWidth);
         float posY = Mathf.Clamp(this.target.transform.position.y, minLimits.y + halfHeight, maxLimits.y - halfHeight);
-
         targetPosition = new Vector3(posX, posY, this.transform.position.z);
     }
 

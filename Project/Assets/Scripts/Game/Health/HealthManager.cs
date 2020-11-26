@@ -17,14 +17,10 @@ public class HealthManager : MonoBehaviour
     {
         _characterRenderer = GetComponent<SpriteRenderer>();
         sprites = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<SpriteRenderer>();
-
-        //quest = GetComponent<QuestEnemy>();
-        //questManager = FindObjectOfType<QuestManager>();
         currentHealth = maxHealth;
         flashActive = true;
 
         bloodPoint = transform.Find("Blood Point").gameObject;
-
     }
 
     private void Update()
@@ -49,7 +45,6 @@ public class HealthManager : MonoBehaviour
                 ToggleColor(true);
                 flashActive = false;
                 GetComponent<BoxCollider2D>().enabled = true;
-
             }
         }
     }
@@ -57,20 +52,15 @@ public class HealthManager : MonoBehaviour
     public void DamageCharacter(int damage)
     {
         //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.HIT);
-
-        
         currentHealth -= damage;
 
         if (gameObject.name.Equals("Player"))
         {
             //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.HIT);
-
         }
         else if (gameObject.tag.Equals("Enemy"))
         {
             //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.ATTACK);
-            
-
         }
 
         if (currentHealth <= 0) //health
@@ -116,7 +106,6 @@ public class HealthManager : MonoBehaviour
                                          (visible ? 1 : 0));
             }
         }
-       
     }
 
     public void Heal()
@@ -127,5 +116,4 @@ public class HealthManager : MonoBehaviour
             currentHealth += 30;
         }
     }
-
 }

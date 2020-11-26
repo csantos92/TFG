@@ -4,55 +4,44 @@ using UnityEngine;
 
 public class NpcMovement : MonoBehaviour
 {
-
-    public float speed = 1.5f;
+    public float speed, walkTime, waitTime;
+    public bool isTalking, isWalking;
+    private float waitCounter, walkCounter;
+    private int currentDirection;
     private Rigidbody2D _rigidBody;
     private Animator _animator;
-
-    public bool isWalking = false;
-    public bool isTalking;
-
-    public float walkTime = 1.5f;
-    private float walkCounter;
-
-    public float waitTime = 4.0f;
-    private float waitCounter;
-
+    public BoxCollider2D npcZone;
+    public Vector2 directionToMove;
     private Vector2[] walkingDirections =
     {
         Vector2.up, Vector2.down, Vector2.left, Vector2.right
     };
-    private int currentDirection;
-
-    public Vector2 directionToMove;
-
-
-    public BoxCollider2D npcZone;
-    //private int forbiddenDirection;
-
-    //private DialogueManager dialogueManager;
 
     // Start is called before the first frame update
     void Start()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        speed = 1.5f;
+        walkTime = 1.5f;
+        waitTime = 4.0f;
         waitCounter = waitTime;
         walkCounter = walkTime;
-        isTalking = false;
-        //dialogueManager = FindObjectOfType<DialogueManager>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-
         if (isTalking)
         {
-            //isTalking = dialogueManager.dialogueActive;
             StopWalking();
             return;
         }
+        else
+        {
+            StartWalking(currentDirection);
+        }
+
 
         if (isWalking)
         {
@@ -92,7 +81,6 @@ public class NpcMovement : MonoBehaviour
         _animator.SetFloat("Vertical", walkingDirections[currentDirection].y);
         _animator.SetFloat("Last_H", directionToMove.x);
         _animator.SetFloat("Last_V", directionToMove.y);
-
     }
 
     public void GoToTheOpposite()

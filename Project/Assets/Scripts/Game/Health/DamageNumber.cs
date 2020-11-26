@@ -5,16 +5,11 @@ using UnityEngine.UI;
 
 public class DamageNumber : MonoBehaviour
 {
-
-    public float damageSpeed;
-    public float damagePoints;
-
+    public float damageSpeed, damagePoints;
+    public float timeToChangeDirection, timeToChangeDirectionCounter;
     public Text damageText;
-
     public Vector2 direction = new Vector2(1, 2);
-    public float timeToChangeDirection;
-    public float timeToChangeDirectionCounter;
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -25,7 +20,6 @@ public class DamageNumber : MonoBehaviour
             timeToChangeDirectionCounter += timeToChangeDirection;
         }
 
-
         damageText.text = "" + damagePoints;
         this.transform.position = new Vector3(
             this.transform.position.x + direction.x * damageSpeed * Time.deltaTime, 
@@ -33,7 +27,5 @@ public class DamageNumber : MonoBehaviour
             this.transform.position.z);
 
         this.transform.localScale = this.transform.localScale * (1 - Time.deltaTime/3);
-
     }
-
 }

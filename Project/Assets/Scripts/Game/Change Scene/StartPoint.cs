@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class StartPoint : MonoBehaviour
 {
-
+    public string uuid;
     private PlayerController player;
     private CameraFollow theCamera;
     public Vector2 facingDirection = Vector2.zero;
-    public string uuid;
 
     //Gets the position where the player must start when changing to another scene
     void Start()
     {
-
         player = FindObjectOfType<PlayerController>();
         theCamera = FindObjectOfType<CameraFollow>();
 
@@ -27,5 +25,4 @@ public class StartPoint : MonoBehaviour
 
         player.lastMovement = facingDirection;
     }
-
 }

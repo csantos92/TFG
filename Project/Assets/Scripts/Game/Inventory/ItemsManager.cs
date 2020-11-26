@@ -5,15 +5,17 @@ using UnityEngine.UI;
 
 public class ItemsManager : MonoBehaviour
 {
+    private int count, hp;
     private HealthManager _healthManager;
     public Text potionCount;
-    private int count = 0, hp = 0;
     public GameObject potionCanvas;
     public GameObject player;
 
     private void Start()
     {
         _healthManager = player.GetComponentInChildren<HealthManager>();
+        count = 0;
+        hp = 0;
     }
 
     private void Update()
@@ -26,7 +28,6 @@ public class ItemsManager : MonoBehaviour
         {
             potionCount.text = "x" + count;
         }
-       
     }
 
     private List<GameObject> questItems = new List<GameObject>();
@@ -72,7 +73,6 @@ public class ItemsManager : MonoBehaviour
     public Items GetRegularItemAt(int idx)
     {
         return items[idx].GetComponent<Items>();
-
     }
 
     public void UseItem()
@@ -96,12 +96,10 @@ public class ItemsManager : MonoBehaviour
             clone.GetComponent<DamageNumber>().damagePoints = hp;
             //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DRINK);
         }
-        
     }
 
     public void AddItem(GameObject item)
     {
-
         items.Add(item);
         count++;
     }

@@ -35,7 +35,6 @@ public class QuestManager : MonoBehaviour
         {
             dialogueManager.ShowDialogue(new string[] { questText }, title);
         }
-
     }
 
     public Quest QuestWithID(int questID)
@@ -52,5 +51,4 @@ public class QuestManager : MonoBehaviour
 
         return q;
     }
-
 }

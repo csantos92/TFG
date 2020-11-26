@@ -5,12 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(CircleCollider2D))]
 public class QuestItem : MonoBehaviour
 {
-
     public int questID;
+    public string itemName;
     private QuestManager questManager;
     private ItemsManager itemManager;
-    public string itemName;
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

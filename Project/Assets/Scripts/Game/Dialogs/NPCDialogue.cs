@@ -6,19 +6,18 @@ using UnityEngine.UI;
 [RequireComponent(typeof(BoxCollider2D))]
 public class NPCDialogue : MonoBehaviour
 {
-
     public string npcName;
     public string[] npcDialogueLines;
-    public Sprite npcSprite;
-    private DialogueManager dialogueManager;
     private bool playerInTheZone;
     public bool automaticTalk, finishQuestByTalk, isBoss, thisEnemyTalking, finishTalk;
+    public Sprite npcSprite;
     public GameObject finishQuest, blockPaths, boss;
+    private DialogueManager _dialogueManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        dialogueManager = FindObjectOfType<DialogueManager>();
+        _dialogueManager = FindObjectOfType<DialogueManager>();
     }
 
     void Update()
@@ -33,16 +32,27 @@ public class NPCDialogue : MonoBehaviour
             {
                 blockPaths.SetActive(true);
             }
-            
         }
 
-        if (Input.GetKeyDown(KeyCode.Q)) { StartTalk(); }
+        if (Input.GetKey(KeyCode.Q)) { StartTalk(); }
 
-        if (isBoss && thisEnemyTalking && !dialogueManager.dialogueActive)
+        if(playerInTheZone && finishQuestByTalk)
+        {
+            _dialogueManager.finishQuestByTalking = true;
+        }
+
+        if (_dialogueManager.setActive && playerInTheZone && finishQuestByTalk)
+        {
+            if (finishQuest != null && !finishQuest.activeInHierarchy)
+            {
+                finishQuest.SetActive(true);
+            }
+        }
+
+        if (isBoss && thisEnemyTalking && !_dialogueManager.dialogueActive)
         {
             transform.parent.GetComponent<EnemyController>().enabled = true;
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -76,30 +86,22 @@ public class NPCDialogue : MonoBehaviour
 
             if (npcSprite != null)
             {
-                dialogueManager.ShowDialogue(finalDialogue, npcName, npcSprite);
+                _dialogueManager.ShowDialogue(finalDialogue, npcName, npcSprite);
 
                 if (finishQuestByTalk)
                 {
-                    dialogueManager.finishQuestByTalking = true;
+                    _dialogueManager.finishQuestByTalking = true;
                 }
             }
             else
             {
-                dialogueManager.ShowDialogue(finalDialogue, npcName);
+                _dialogueManager.ShowDialogue(finalDialogue, npcName);
             }
 
             if (gameObject.GetComponentInParent<NpcMovement>() != null)
             {
                 gameObject.GetComponentInParent<NpcMovement>().isTalking = true;
             }
-        }
-    }
-
-    public void FinishQuest()
-    {
-        if (finishQuest != null && !finishQuest.activeInHierarchy && finishQuestByTalk)
-        {
-            finishQuest.SetActive(true);
         }
     }
 }

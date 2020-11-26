@@ -7,17 +7,14 @@ using System.Text;
 
 public class UIManager : MonoBehaviour
 {
+    public int weaponNumber;
     public GameObject inventoryPanel, mainPanel, menuPanel, itemsPanel, questsPanel, statsPanel, gameOver;
-
-
     public Slider playerHealthBar, playerHealthBar2;
     public HealthManager playerHealthManager;
     public Text playerHealthBarText;
     private Animator _animator;
     private WeaponManager weaponManager;
     private ItemsManager itemsManager;
-    public int weaponNumber;
-
     public Text inventoryText, swordName, swordDamage;
     public Image swordImage;
     public Button inventoryButton;
@@ -160,25 +157,4 @@ public class UIManager : MonoBehaviour
         tempB.onClick.AddListener(() => tempB.GetComponent<InventoryButton>().ActivateButton());
         tempB.image.sprite = item.GetComponent<SpriteRenderer>().sprite;
     }
-
-    public void ShowOnly(int type)
-    {
-        inventoryText.text = "";
-        foreach (Transform t in itemsPanel.transform)
-        {
-            t.gameObject.SetActive((int)t.GetComponent<InventoryButton>().type == type);
-        }
-        //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
-    }
-
-    public void ShowAll()
-    {
-        inventoryText.text = "";
-        foreach (Transform t in itemsPanel.transform)
-        {
-            t.gameObject.SetActive(true);
-        }
-        //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
-    }
-
 }

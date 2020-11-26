@@ -6,14 +6,13 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-
+    public bool dialogueActive, finishQuestByTalking, finishTalk, isTalking, setActive;
+    public string[] dialogueLines;
+    public int currentDialogueLine;
     public GameObject dialogueBox, dialogueBoxTitle;
     public Text dialogueTitleText, dialogueText;
     public Image avatarImage;
-    public bool dialogueActive, finishQuestByTalking, finishTalk;
-    public string[] dialogueLines;
-    public int currentDialogueLine;
-    private PlayerController playerController;
+    private PlayerController _playerController;
     public Animator _animator;
     private NPCDialogue _npcDialogue;
     public Button talkButton;
@@ -24,13 +23,12 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(false);
         dialogueBoxTitle.SetActive(false);
 
-        playerController = FindObjectOfType<PlayerController>();
+        _playerController = FindObjectOfType<PlayerController>();
         _npcDialogue = FindObjectOfType<NPCDialogue>();
+        _animator = GameObject.Find("Player").GetComponent<Animator>();
 
         Button btn = talkButton.GetComponent<Button>();
         btn.onClick.AddListener(ContinueTalk);
-
-        _animator = GameObject.Find("Player").GetComponent<Animator>();
     }
 
     public void ContinueTalk()
@@ -42,21 +40,19 @@ public class DialogueManager : MonoBehaviour
 
             if (currentDialogueLine >= dialogueLines.Length)
             {
-                playerController.isTalking = false;
+                _playerController.isTalking = false;
                 currentDialogueLine = 0;
                 dialogueActive = false;
                 avatarImage.enabled = false;
                 dialogueBox.SetActive(false);
                 dialogueBoxTitle.SetActive(false);
                 _animator.enabled = true;
-                //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIALOG);
 
                 if (finishQuestByTalking)
                 {
-                    _npcDialogue.FinishQuest();
-                    finishQuestByTalking = false;
+                    setActive = true;
                 }
-                
+                //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIALOG);                
             }
             else
             {
@@ -95,6 +91,6 @@ public class DialogueManager : MonoBehaviour
         dialogueBoxTitle.SetActive(true);
         avatarImage.enabled = false;
         dialogueText.text = dialogueLines[currentDialogueLine];
-        playerController.isTalking = true;
+        _playerController.isTalking = true;
     }
 }

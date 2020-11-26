@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GoToNewPlace : MonoBehaviour
 {
-
     public string newPlaceName = "New Scene name here";
     public string uuid;
     private PlayerController playerController;
@@ -33,7 +32,5 @@ public class GoToNewPlace : MonoBehaviour
             playerController.nextUuid = uuid;
             SceneManager.LoadScene(newPlaceName);
         }
-       
     }
-
 }

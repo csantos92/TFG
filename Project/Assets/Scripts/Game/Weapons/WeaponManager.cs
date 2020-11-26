@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-
-    private List<GameObject> weapons;
     public int activeWeapon;
+    private List<GameObject> weapons;
+
     public List<GameObject> GetAllWeapons()
     {
         return weapons;

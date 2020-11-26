@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
             currentMovement = new Vector2(0, 1);
         }
 
-        if (Input.GetKey("s"))
+        else if (Input.GetKey("s"))
         {
             pos.y -= speed * Time.deltaTime;
             walking = true;
@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
             currentMovement = new Vector2(0, -1);
         }
 
-        if (Input.GetKey("d"))
+        else if (Input.GetKey("d"))
         {
             pos.x += speed * Time.deltaTime;
             walking = true;
@@ -78,14 +78,14 @@ public class PlayerController : MonoBehaviour
             currentMovement = new Vector2(1, 0);
         }
 
-        if (Input.GetKey("a"))
+        else if (Input.GetKey("a"))
         {
             pos.x -= speed * Time.deltaTime;
             walking = true;
             lastMovement = new Vector2(-1, 0);
             currentMovement = new Vector2(-1, 0);
         }
-        
+
         transform.position = pos;
 
         if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))

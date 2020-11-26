@@ -4,32 +4,21 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public float speed = 1.5f;
+    public bool isWalking, isAttacking;
+    private bool playerInTheZone;
+    public float walkTime = 1.5f, speed = 1.5f, waitTime = 4.0f;
+    private float waitCounter, walkCounter;
+    private int currentDirection;
     private Rigidbody2D _rigidBody;
     private Animator _animator;
-
-    public bool isWalking, isAttacking;
-    //public bool isTalking;
-    private bool playerInTheZone;
-
-    public float walkTime = 1.5f;
-    private float walkCounter;
-
-    public float waitTime = 4.0f;
-    private float waitCounter;
-
+    public BoxCollider2D enemyZone;
+    public CircleCollider2D playerInRange;
+    private GameObject player;
+    public Vector2 directionToMove;
     private Vector2[] walkingDirections =
     {
         Vector2.up, Vector2.down, Vector2.left, Vector2.right
     };
-    private int currentDirection;
-
-    public Vector2 directionToMove;
-    public BoxCollider2D enemyZone;
-    public CircleCollider2D playerInRange;
-    private GameObject player;
-
-    //private DialogueManager dialogueManager;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +27,6 @@ public class EnemyController : MonoBehaviour
         _animator = GetComponent<Animator>();
         waitCounter = waitTime;
         walkCounter = walkTime;
-        //dialogueManager = FindObjectOfType<DialogueManager>();
         player = GameObject.Find("Player");
     }
 
@@ -47,14 +35,12 @@ public class EnemyController : MonoBehaviour
     {
         if (playerInTheZone)
         {
-          
             if (((transform.position.x - player.transform.position.x < 1 && transform.position.x - player.transform.position.x >= 0) || (transform.position.x - player.transform.position.x > -1 && transform.position.x - player.transform.position.x < 0)) && (transform.position.y <= player.transform.position.y && transform.position.y - player.transform.position.y < -0.5))
             {
                 walkTime = 30;
                 StartWalking(0);
                 walkCounter = walkTime;
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-
                 //EnemyFix();
             }
 
@@ -94,13 +80,6 @@ public class EnemyController : MonoBehaviour
             isAttacking = false;
         }
 
-        /*if (isTalking)
-    {
-        //isTalking = dialogueManager.dialogueActive;
-        StopWalking();
-        return;
-    }
-    */
         if (isWalking)
         {
             if (this.transform.position.x < enemyZone.bounds.min.x ||
@@ -117,7 +96,6 @@ public class EnemyController : MonoBehaviour
             {
                 StopWalking();
             }
-
         }
         else
         {

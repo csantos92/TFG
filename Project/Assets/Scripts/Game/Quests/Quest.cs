@@ -5,12 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Quest : MonoBehaviour
 {
-
+    public bool needsItem, killEnemy, questCompleted;
+    public string startText, completeText, title;
     public int questID;
     private QuestManager questManager;
-    public string startText, completeText, title;
     public Sprite npcSprite;
-    public bool needsItem, killEnemy, questCompleted;
     public QuestItem item;
     public QuestEnemy enemy;
     public Quest nextQuest;
