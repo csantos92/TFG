@@ -7,7 +7,8 @@ using System.Text;
 
 public class UIManager : MonoBehaviour
 {
-    public int weaponNumber;
+    public int weaponNumber, numberOfKatanas;
+    public bool bossDead;
     public GameObject inventoryPanel, mainPanel, menuPanel, itemsPanel, questsPanel, statsPanel, gameOver;
     public Slider playerHealthBar, playerHealthBar2;
     public HealthManager playerHealthManager;
@@ -22,6 +23,7 @@ public class UIManager : MonoBehaviour
     //Set all components not visible
     private void Start()
     {
+        numberOfKatanas = 1;
         weaponManager = FindObjectOfType<WeaponManager>();
         itemsManager = FindObjectOfType<ItemsManager>();
         _animator = GameObject.Find("Player").GetComponent<Animator>();
@@ -79,6 +81,11 @@ public class UIManager : MonoBehaviour
             gameOver.SetActive(true);
         }
 
+        if (bossDead)
+        {
+            numberOfKatanas++;
+            bossDead = false;
+        }
     }
 
     //Set components related to inventory visible
@@ -133,14 +140,18 @@ public class UIManager : MonoBehaviour
     public void FillInventory()
     {
         List<GameObject> weapons = weaponManager.GetAllWeapons();
-        int i = 0;
+        for(int j = 0; j < numberOfKatanas ; j++)
+        {
+            AddItemToInventory(weapons[j], InventoryButton.ItemType.WEAPON, j);
+        }
+        /*
         foreach (GameObject w in weapons)
         {
             AddItemToInventory(w, InventoryButton.ItemType.WEAPON, i);
             i++;
         }
-
-        i = 0;
+        */
+        int i = 0;
         List<GameObject> keyItems = itemsManager.GetQuestItems();
         foreach (GameObject item in keyItems)
         {

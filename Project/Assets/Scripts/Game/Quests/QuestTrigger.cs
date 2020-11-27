@@ -9,6 +9,7 @@ public class QuestTrigger : MonoBehaviour
     public bool startPoint, endPoint, automaticCatch;
     private bool playerInZone;
     private QuestManager questManager;
+    public GameObject blockedPath;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +63,11 @@ public class QuestTrigger : MonoBehaviour
                         if (q.gameObject.activeInHierarchy)
                         {
                             q.CompleteQuest();
+
+                            if(blockedPath != null)
+                            {
+                                blockedPath.SetActive(false);
+                            }
                         }
                     }
                 }

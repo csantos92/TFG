@@ -5,12 +5,13 @@ using UnityEngine;
 public class HealthManager : MonoBehaviour
 {
     public int maxHealth, currentHealth;
-    public bool flashActive, isDead;
+    public bool flashActive, isDead, isBoss;
     public float flashLength;
     private float flashCounter;
     private SpriteRenderer _characterRenderer;
     private SpriteRenderer[] sprites;
     public GameObject bloodAnim, bloodPoint;
+    public UIManager _uiManager;
 
     // Start is called before the first frame update
     void Start()
@@ -67,7 +68,11 @@ public class HealthManager : MonoBehaviour
         {
             if (gameObject.tag.Equals("Enemy"))
             {
-                this.transform.gameObject.GetComponentInChildren<NPCDialogue>().blockPaths.SetActive(false);
+                if (isBoss)
+                {
+                    this.transform.gameObject.GetComponentInChildren<NPCDialogue>().blockPaths.SetActive(false);
+                    _uiManager.bossDead = true;
+                }
             }
 
             if (gameObject.name.Equals("Player"))

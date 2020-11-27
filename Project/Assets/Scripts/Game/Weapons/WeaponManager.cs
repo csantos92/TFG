@@ -6,7 +6,6 @@ public class WeaponManager : MonoBehaviour
 {
     public int activeWeapon;
     private List<GameObject> weapons;
-
     public List<GameObject> GetAllWeapons()
     {
         return weapons;
@@ -16,6 +15,7 @@ public class WeaponManager : MonoBehaviour
     {
         return weapons[pos].GetComponent<WeaponDamage>();
     }
+
     // Start is called before the first frame update
     void Start()
     {
