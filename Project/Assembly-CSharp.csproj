@@ -80,6 +80,10 @@
     <Compile Include="Assets\Scripts\Game\Inventory\InventoryButton.cs" />
     <Compile Include="Assets\Scripts\Game\Quests\QuestManager.cs" />
     <Compile Include="Assets\Scripts\Game\Inventory\Items.cs" />
+    <Compile Include="Assets\Scripts\Game\Audio\SFXType.cs" />
+    <Compile Include="Assets\Scripts\Game\Audio\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\Game\Audio\PlayAudioTrack.cs" />
+    <Compile Include="Assets\Scripts\Game\Audio\SFXManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

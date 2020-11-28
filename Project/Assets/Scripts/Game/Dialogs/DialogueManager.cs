@@ -36,7 +36,7 @@ public class DialogueManager : MonoBehaviour
         if (dialogueActive)
         {
             currentDialogueLine++;
-            //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
+            SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
 
             if (currentDialogueLine >= dialogueLines.Length)
             {
@@ -52,7 +52,7 @@ public class DialogueManager : MonoBehaviour
                 {
                     setActive = true;
                 }
-                //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIALOG);                
+                SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIALOG);                
             }
             else
             {
@@ -65,13 +65,13 @@ public class DialogueManager : MonoBehaviour
     {
         ShowDialogueFill(lines);
         dialogueTitleText.text = npcName;
-        //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIALOG);
+        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIALOG);
     }
 
     public void ShowDialogue(string[] lines)
     {
         ShowDialogueFill(lines);
-        //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIALOG);
+        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIALOG);
     }
 
     public void ShowDialogue(string[] lines, string npcName, Sprite sprite)
@@ -79,7 +79,7 @@ public class DialogueManager : MonoBehaviour
         ShowDialogue(lines, npcName);
         avatarImage.enabled = true;
         avatarImage.sprite = sprite;
-        //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIALOG);
+        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIALOG);
     }
 
     private void ShowDialogueFill(string[] lines)

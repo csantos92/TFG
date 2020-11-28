@@ -144,13 +144,7 @@ public class UIManager : MonoBehaviour
         {
             AddItemToInventory(weapons[j], InventoryButton.ItemType.WEAPON, j);
         }
-        /*
-        foreach (GameObject w in weapons)
-        {
-            AddItemToInventory(w, InventoryButton.ItemType.WEAPON, i);
-            i++;
-        }
-        */
+
         int i = 0;
         List<GameObject> keyItems = itemsManager.GetQuestItems();
         foreach (GameObject item in keyItems)

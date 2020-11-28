@@ -25,11 +25,11 @@ public class Quest : MonoBehaviour
         questManager = FindObjectOfType<QuestManager>();
         questManager.ShowQuestText(completeText, title, npcSprite);
         questCompleted = true;
-        //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.QUEST);
+        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.QUEST);
 
         if (nextQuest != null)
         {
-            Invoke("ActivateNextQuest", 5.0f);
+            Invoke("ActivateNextQuest", 7.0f);
         }
 
         gameObject.SetActive(false);

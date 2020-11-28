@@ -21,6 +21,7 @@ ScriptsOnlyBuild:
     - ParticleLayer
     - PlayerController
     - Quest
+    - QuestEnemy
     - QuestItem
     - QuestManager
     - QuestTrigger
@@ -70,7 +71,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Shadow
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
-    - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
     Assets/Scenes/Game/House Interior/House Interior.unity:
     - Class: 1
@@ -98,7 +98,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12726}
     - Class: 114
-      Script: {instanceID: 14932}
+      Script: {instanceID: 14940}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -173,61 +173,61 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12726}
     - Class: 114
-      Script: {instanceID: 12928}
+      Script: {instanceID: 12894}
     - Class: 114
-      Script: {instanceID: 13144}
+      Script: {instanceID: 12930}
     - Class: 114
-      Script: {instanceID: 13212}
+      Script: {instanceID: 13146}
     - Class: 114
-      Script: {instanceID: 13356}
+      Script: {instanceID: 13214}
     - Class: 114
-      Script: {instanceID: 13496}
+      Script: {instanceID: 13358}
     - Class: 114
-      Script: {instanceID: 13774}
+      Script: {instanceID: 13446}
     - Class: 114
-      Script: {instanceID: 13822}
+      Script: {instanceID: 13468}
     - Class: 114
-      Script: {instanceID: 13872}
+      Script: {instanceID: 13502}
     - Class: 114
-      Script: {instanceID: 13906}
+      Script: {instanceID: 13704}
     - Class: 114
-      Script: {instanceID: 13992}
+      Script: {instanceID: 13782}
     - Class: 114
-      Script: {instanceID: 14212}
+      Script: {instanceID: 13830}
     - Class: 114
-      Script: {instanceID: 14248}
+      Script: {instanceID: 13914}
     - Class: 114
-      Script: {instanceID: 14538}
+      Script: {instanceID: 14000}
     - Class: 114
-      Script: {instanceID: 14682}
+      Script: {instanceID: 14220}
     - Class: 114
-      Script: {instanceID: 14718}
+      Script: {instanceID: 14256}
     - Class: 114
-      Script: {instanceID: 14872}
+      Script: {instanceID: 14546}
     - Class: 114
-      Script: {instanceID: 14900}
+      Script: {instanceID: 14690}
     - Class: 114
-      Script: {instanceID: 14932}
+      Script: {instanceID: 14726}
     - Class: 114
-      Script: {instanceID: 15000}
+      Script: {instanceID: 14880}
     - Class: 114
-      Script: {instanceID: 15074}
+      Script: {instanceID: 14908}
     - Class: 114
-      Script: {instanceID: 15184}
+      Script: {instanceID: 14940}
     - Class: 114
-      Script: {instanceID: 15230}
+      Script: {instanceID: 15008}
     - Class: 114
-      Script: {instanceID: 15252}
+      Script: {instanceID: 15082}
     - Class: 114
-      Script: {instanceID: 15264}
+      Script: {instanceID: 15192}
     - Class: 114
-      Script: {instanceID: 51352}
+      Script: {instanceID: 15238}
     - Class: 114
-      Script: {instanceID: 51356}
+      Script: {instanceID: 15260}
     - Class: 114
-      Script: {instanceID: 51360}
+      Script: {instanceID: 15272}
     - Class: 114
-      Script: {instanceID: 51372}
+      Script: {instanceID: 15274}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -288,23 +288,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12220}
     - Class: 114
-      Script: {instanceID: 12928}
+      Script: {instanceID: 12930}
     - Class: 114
-      Script: {instanceID: 12986}
+      Script: {instanceID: 12988}
     - Class: 114
-      Script: {instanceID: 14090}
+      Script: {instanceID: 14098}
     - Class: 114
-      Script: {instanceID: 14110}
+      Script: {instanceID: 14118}
     - Class: 114
-      Script: {instanceID: 14538}
+      Script: {instanceID: 14546}
     - Class: 114
-      Script: {instanceID: 14832}
+      Script: {instanceID: 14840}
     - Class: 114
-      Script: {instanceID: 14872}
+      Script: {instanceID: 14880}
     - Class: 114
-      Script: {instanceID: 15074}
+      Script: {instanceID: 15082}
     - Class: 114
-      Script: {instanceID: 15184}
+      Script: {instanceID: 15192}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -349,15 +349,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12220}
     - Class: 114
-      Script: {instanceID: 12928}
+      Script: {instanceID: 12930}
     - Class: 114
-      Script: {instanceID: 14538}
+      Script: {instanceID: 14546}
     - Class: 114
-      Script: {instanceID: 14872}
+      Script: {instanceID: 14880}
     - Class: 114
-      Script: {instanceID: 15074}
+      Script: {instanceID: 15082}
     - Class: 114
-      Script: {instanceID: 15184}
+      Script: {instanceID: 15192}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -407,7 +407,7 @@ ScriptsOnlyBuild:
     className: TMP_SelectionCaret
   - hash:
       serializedVersion: 2
-      Hash: 14e7ad302eb8b3774a245864f5589862
+      Hash: 1abc26bb4bf4fbc050c9d3526d074ea2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HealthManager
@@ -587,13 +587,13 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 8755791aebf193fd7376b22364904185
+      Hash: ac9cd51ca8591965d03779e43b0f6f4c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
   - hash:
       serializedVersion: 2
-      Hash: a27c0e7efb0f46b889506cd1dd1ab829
+      Hash: 2e06ebd2d5b6dfcb242ba6520c36e2d3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: StartPoint
@@ -603,6 +603,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Mask
+  - hash:
+      serializedVersion: 2
+      Hash: ca36d6dd34e853a09a4a832265eadfaf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Quest
   - hash:
       serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
@@ -647,7 +653,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: ffc411166be8e33b23dc65c199c2d527
+      Hash: 66bca5cc6a18c5298ec75235e56a84d6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CameraFollow
@@ -665,7 +671,7 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: 53256ad8ac1c5c676c8eb0fb7e98d3a9
+      Hash: 746f74ee9627cff569b484a289cb1188
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIManager
@@ -681,6 +687,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.U2D.Animation
     className: SpriteSkinEntity
+  - hash:
+      serializedVersion: 2
+      Hash: 63bb89fef360bf3efd79f36b97b1f00c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: QuestTrigger
+  - hash:
+      serializedVersion: 2
+      Hash: 1d34ce7538c2c8f0bad0938a795cb8c7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: QuestEnemy
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -707,6 +725,12 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
+      Hash: 89da7a329c2fa36eaaa8ee76a7989a4e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: QuestItem
+  - hash:
+      serializedVersion: 2
       Hash: c1d728126ff1918728036c59106d32b2
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -719,7 +743,7 @@ ScriptsOnlyBuild:
     className: WeaponDamage
   - hash:
       serializedVersion: 2
-      Hash: a11503878a83f64be01eaff5ecd7a79b
+      Hash: dc5f850905e121c8ff0d7ea153079af8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DamageNumber
@@ -737,7 +761,7 @@ ScriptsOnlyBuild:
     className: DamagePlayer
   - hash:
       serializedVersion: 2
-      Hash: 91346dbe2aa38b0b6d9f8b70a4821b2d
+      Hash: 67015d009d7246dce0be1831d3f3c806
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DialogueManager
@@ -803,7 +827,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: b7d1ac6d91e3ef43c82f0bfd124ab99c
+      Hash: 1e3bb57fe683875dcb016916fd75cb81
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NPCDialogue
@@ -839,7 +863,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: b47bf40e3d5968285893ccc55033196c
+      Hash: e760d92ad85671b9e36010faae9785cc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyController
@@ -881,7 +905,7 @@ ScriptsOnlyBuild:
     className: CameraLimits
   - hash:
       serializedVersion: 2
-      Hash: e4f4d971b0b7284d4dda81fd494f2389
+      Hash: cd59ec21d54bf6b3bcf0df9784a052ab
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NpcMovement
@@ -977,6 +1001,12 @@ ScriptsOnlyBuild:
     className: InventoryButton
   - hash:
       serializedVersion: 2
+      Hash: dc32f4a2a5dcc967aec908b61ad514cd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: QuestManager
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -993,40 +1023,10 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 66172bad67305017ad092c68a950ad63
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: QuestManager
-  - hash:
-      serializedVersion: 2
-      Hash: 33b07e821f45082f2f461a4be78dece8
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Quest
-  - hash:
-      serializedVersion: 2
-      Hash: 89da7a329c2fa36eaaa8ee76a7989a4e
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: QuestItem
-  - hash:
-      serializedVersion: 2
-      Hash: 1d34ce7538c2c8f0bad0938a795cb8c7
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: QuestEnemy
-  - hash:
-      serializedVersion: 2
-      Hash: dde7030bd21e65e8d446c74a779c506a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: QuestTrigger
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menus/Title Screen.unity
   - Assets/Scenes/Menus/Tutorial.unity
   - Assets/Scenes/Game/Level/Level.unity
   - Assets/Scenes/Game/House Interior/House Interior.unity
-  playerPath: C:/Users/Carlos/Desktop/juego/v3/La leyenda de Masamune.exe
+  playerPath: C:/Users/Carlos/Desktop/juego/v4/La leyenda de Masamune.exe

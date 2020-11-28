@@ -18,10 +18,9 @@ public class HealthManager : MonoBehaviour
     {
         _characterRenderer = GetComponent<SpriteRenderer>();
         sprites = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<SpriteRenderer>();
+        bloodPoint = transform.Find("Blood Point").gameObject;
         currentHealth = maxHealth;
         flashActive = true;
-
-        bloodPoint = transform.Find("Blood Point").gameObject;
     }
 
     private void Update()
@@ -52,16 +51,16 @@ public class HealthManager : MonoBehaviour
 
     public void DamageCharacter(int damage)
     {
-        //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.HIT);
+        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.HIT);
         currentHealth -= damage;
 
         if (gameObject.name.Equals("Player"))
         {
-            //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.HIT);
+            SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.HIT);
         }
         else if (gameObject.tag.Equals("Enemy"))
         {
-            //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.ATTACK);
+            SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.ATTACK);
         }
 
         if (currentHealth <= 0) //health
@@ -77,7 +76,7 @@ public class HealthManager : MonoBehaviour
 
             if (gameObject.name.Equals("Player"))
             {
-                //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIE);
+                SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIE);
                 isDead = true;
             }
 
@@ -117,7 +116,7 @@ public class HealthManager : MonoBehaviour
     {
         if (gameObject.name.Equals("Player"))
         {
-            //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIE);
+            SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIE);
             currentHealth += 30;
         }
     }

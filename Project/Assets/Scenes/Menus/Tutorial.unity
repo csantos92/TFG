@@ -195,8 +195,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Andar: \n\nAbrir men\xFA: \n\nHablar/Interactuar: \n\nTomar poci\xF3n:
-    \n\nAtacar: \n\nNavegar por los men\xFAs: "
+  m_Text: "Andar: \n\nCorrer:\n\nAbrir men\xFA: \n\nHablar/Interactuar: \n\nTomar
+    poci\xF3n: \n\nAtacar: \n\nNavegar por los men\xFAs: "
 --- !u!222 &264074982
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -539,7 +539,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "ASWD o Flechas\n\nE o click en el icono de men\xFA\n\nF o click derecho\n\nC
+  m_Text: "ASWD\n\nShift izquierdo\n\nE o click en el icono de men\xFA\n\nQ\n\nC
     o click en el icono de poci\xF3n\n\nEspacio o click izquierdo\t\n\nClick izquierdo"
 --- !u!222 &1411857929
 CanvasRenderer:

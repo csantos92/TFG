@@ -15,8 +15,8 @@ public class PlayerController : MonoBehaviour
     private bool walking;
     private Animator _animator;
     private Rigidbody2D _rigidbody;
-    public HealthManager _healthManager;
-    public ItemsManager _itemsManager;
+    private HealthManager _healthManager;
+    private ItemsManager _itemsManager;
 
     // Get player component
     void Start()
@@ -58,7 +58,6 @@ public class PlayerController : MonoBehaviour
             pos.y += speed * Time.deltaTime;
             walking = true;
             lastMovement = new Vector2(0, 1);
-            //_rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 1).normalized * speed;
             currentMovement = new Vector2(0, 1);
         }
 
@@ -103,7 +102,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            speed = 6.0f;
+            speed = 7.0f;
         }
 
         if (Input.GetKeyUp(KeyCode.LeftShift))
@@ -113,6 +112,7 @@ public class PlayerController : MonoBehaviour
 
         if (attackPressed)
         {
+            SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.SLASH);
             attackTimeCounter -= Time.deltaTime;
 
             if (attackTimeCounter < 0)

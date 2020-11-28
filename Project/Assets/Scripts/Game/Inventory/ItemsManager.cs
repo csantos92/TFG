@@ -55,7 +55,7 @@ public class ItemsManager : MonoBehaviour
 
     public void AddQuestItem(GameObject newItem)
     {
-        //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.GRAB);
+        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.GRAB);
 
         questItems.Add(newItem);
     }
@@ -79,10 +79,10 @@ public class ItemsManager : MonoBehaviour
     {
         if (items.Count >= 1 && _healthManager.currentHealth < 100)
         {
-            if(_healthManager.currentHealth <= 70)
+            if(_healthManager.currentHealth <= 60)
             {
-                hp = 30;
-                _healthManager.currentHealth += 30;
+                hp = 40;
+                _healthManager.currentHealth += 40;
             }
             else
             {
@@ -94,7 +94,7 @@ public class ItemsManager : MonoBehaviour
 
             var clone = (GameObject)Instantiate(potionCanvas, player.transform.position, Quaternion.Euler(Vector3.zero));
             clone.GetComponent<DamageNumber>().damagePoints = hp;
-            //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DRINK);
+            SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DRINK);
         }
     }
 
