@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private HealthManager _healthManager;
     private ItemsManager _itemsManager;
+    public DialogueManager _dialogueManager;
 
     // Get player component
     void Start()
@@ -53,36 +54,61 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        if (Input.GetKey("w"))
+        if (Input.GetKey(KeyCode.W))
         {
             pos.y += speed * Time.deltaTime;
             walking = true;
             lastMovement = new Vector2(0, 1);
             currentMovement = new Vector2(0, 1);
+
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                SFXManager.SharedInstance.LoopSFX(SFXType.SoundType.WALK);
+            }
         }
 
-        else if (Input.GetKey("s"))
+        else if (Input.GetKey(KeyCode.S))
         {
             pos.y -= speed * Time.deltaTime;
             walking = true;
             lastMovement = new Vector2(0, -1);
             currentMovement = new Vector2(0, -1);
+
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                SFXManager.SharedInstance.LoopSFX(SFXType.SoundType.WALK);
+            }
         }
 
-        else if (Input.GetKey("d"))
+        else if (Input.GetKey(KeyCode.D))
         {
             pos.x += speed * Time.deltaTime;
             walking = true;
             lastMovement = new Vector2(1, 0);
             currentMovement = new Vector2(1, 0);
+
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                SFXManager.SharedInstance.LoopSFX(SFXType.SoundType.WALK);
+            }
         }
 
-        else if (Input.GetKey("a"))
+        else if (Input.GetKey(KeyCode.A))
         {
             pos.x -= speed * Time.deltaTime;
             walking = true;
             lastMovement = new Vector2(-1, 0);
             currentMovement = new Vector2(-1, 0);
+
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                SFXManager.SharedInstance.LoopSFX(SFXType.SoundType.WALK);
+            }
+        }
+
+        if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+        {
+            SFXManager.SharedInstance.StopSFX(SFXType.SoundType.WALK);
         }
 
         transform.position = pos;
@@ -129,6 +155,11 @@ public class PlayerController : MonoBehaviour
         if (!walking)
         {
             _rigidbody.velocity = Vector2.zero;
+        }
+
+        if (_dialogueManager.dialogueActive)
+        {
+            SFXManager.SharedInstance.StopSFX(SFXType.SoundType.WALK);
         }
 
         _animator.SetFloat(AXIS_H, currentMovement.x);

@@ -98,6 +98,8 @@ public class UIManager : MonoBehaviour
         questsPanel.SetActive(false);
         statsPanel.SetActive(false);
         inventoryText.text = "";
+
+        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
     }
 
     //Set components related to quests visible
@@ -107,6 +109,8 @@ public class UIManager : MonoBehaviour
         statsPanel.SetActive(false);
         itemsPanel.SetActive(false);
         inventoryText.text = "Misiones";
+
+        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
     }
 
     //Set components related to stats visible
@@ -116,6 +120,8 @@ public class UIManager : MonoBehaviour
         questsPanel.SetActive(false);
         itemsPanel.SetActive(false);
         inventoryText.text = "Estado";
+
+        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
     }
 
     public void ToggleItems()
@@ -125,7 +131,7 @@ public class UIManager : MonoBehaviour
         statsPanel.SetActive(false);
         inventoryText.text = "Inventario";
 
-        //SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
+        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
 
         if (inventoryPanel.activeInHierarchy)
         {

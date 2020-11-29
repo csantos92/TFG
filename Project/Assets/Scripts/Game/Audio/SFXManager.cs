@@ -53,4 +53,16 @@ public class SFXManager : MonoBehaviour
     {
         FindAudioSource(type).Play();
     }
+
+    public void LoopSFX(SFXType.SoundType type)
+    {
+        FindAudioSource(type).loop = true;
+        FindAudioSource(type).Play();
+    }
+
+    public void StopSFX(SFXType.SoundType type)
+    {
+        FindAudioSource(type).loop = false;
+        FindAudioSource(type).Stop();
+    }
 }

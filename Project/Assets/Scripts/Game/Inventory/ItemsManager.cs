@@ -94,6 +94,7 @@ public class ItemsManager : MonoBehaviour
 
             var clone = (GameObject)Instantiate(potionCanvas, player.transform.position, Quaternion.Euler(Vector3.zero));
             clone.GetComponent<DamageNumber>().damagePoints = hp;
+
             SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DRINK);
         }
     }
