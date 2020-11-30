@@ -8,8 +8,8 @@ using System.Text;
 public class UIManager : MonoBehaviour
 {
     public int weaponNumber, numberOfKatanas;
-    public bool bossDead;
-    public GameObject inventoryPanel, mainPanel, menuPanel, itemsPanel, questsPanel, statsPanel, gameOver;
+    public bool bossDead, inventoryActive;
+    public GameObject inventoryPanel, mainPanel, menuPanel, itemsPanel, questsPanel, statsPanel, gameOver, dialogue;
     public Slider playerHealthBar, playerHealthBar2;
     public HealthManager playerHealthManager;
     public Text playerHealthBarText;
@@ -34,6 +34,9 @@ public class UIManager : MonoBehaviour
         questsPanel.SetActive(false);
         statsPanel.SetActive(false);
         gameOver.SetActive(false);
+
+        Button btn = inventoryButton.GetComponent<Button>();
+        btn.onClick.AddListener(ToggleInventory);
     }
 
     //Open or close pause menu
@@ -54,7 +57,7 @@ public class UIManager : MonoBehaviour
 
         playerHealthBarText.text = stringBuilder.ToString();
 
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             ToggleInventory();
         }
@@ -91,15 +94,18 @@ public class UIManager : MonoBehaviour
     //Set components related to inventory visible
     public void ToggleInventory()
     {
-        inventoryPanel.SetActive(!inventoryPanel.activeInHierarchy);
-        mainPanel.SetActive(true);
-        menuPanel.SetActive(true);
-        itemsPanel.SetActive(false);
-        questsPanel.SetActive(false);
-        statsPanel.SetActive(false);
-        inventoryText.text = "";
+        if (!dialogue.activeInHierarchy)
+        {
+            inventoryPanel.SetActive(!inventoryPanel.activeInHierarchy);
+            mainPanel.SetActive(true);
+            menuPanel.SetActive(true);
+            itemsPanel.SetActive(false);
+            questsPanel.SetActive(false);
+            statsPanel.SetActive(false);
+            inventoryText.text = "";
 
-        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
+            SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
+        }
     }
 
     //Set components related to quests visible

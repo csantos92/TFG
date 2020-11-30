@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private HealthManager _healthManager;
     private ItemsManager _itemsManager;
+    private UIManager _uiManager;
     public DialogueManager _dialogueManager;
 
     // Get player component
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _healthManager = FindObjectOfType<HealthManager>();
         _itemsManager = FindObjectOfType<ItemsManager>();
+        _uiManager = FindObjectOfType<UIManager>();
         playerCreated = true;
         canMove = true;
         speed = 5.0f;
@@ -61,10 +63,10 @@ public class PlayerController : MonoBehaviour
             lastMovement = new Vector2(0, 1);
             currentMovement = new Vector2(0, 1);
 
-            if (Input.GetKeyDown(KeyCode.W))
+            /*if (Input.GetKeyDown(KeyCode.W))
             {
                 SFXManager.SharedInstance.LoopSFX(SFXType.SoundType.WALK);
-            }
+            }*/
         }
 
         else if (Input.GetKey(KeyCode.S))
@@ -74,10 +76,10 @@ public class PlayerController : MonoBehaviour
             lastMovement = new Vector2(0, -1);
             currentMovement = new Vector2(0, -1);
 
-            if (Input.GetKeyDown(KeyCode.S))
+           /* if (Input.GetKeyDown(KeyCode.S))
             {
                 SFXManager.SharedInstance.LoopSFX(SFXType.SoundType.WALK);
-            }
+            }*/
         }
 
         else if (Input.GetKey(KeyCode.D))
@@ -87,10 +89,10 @@ public class PlayerController : MonoBehaviour
             lastMovement = new Vector2(1, 0);
             currentMovement = new Vector2(1, 0);
 
-            if (Input.GetKeyDown(KeyCode.D))
+            /*if (Input.GetKeyDown(KeyCode.D))
             {
                 SFXManager.SharedInstance.LoopSFX(SFXType.SoundType.WALK);
-            }
+            }*/
         }
 
         else if (Input.GetKey(KeyCode.A))
@@ -100,21 +102,22 @@ public class PlayerController : MonoBehaviour
             lastMovement = new Vector2(-1, 0);
             currentMovement = new Vector2(-1, 0);
 
-            if (Input.GetKeyDown(KeyCode.A))
+            /*if (Input.GetKeyDown(KeyCode.A))
             {
                 SFXManager.SharedInstance.LoopSFX(SFXType.SoundType.WALK);
-            }
+            }*/
         }
 
-        if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+        /*if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
         {
             SFXManager.SharedInstance.StopSFX(SFXType.SoundType.WALK);
-        }
+        }*/
 
         transform.position = pos;
 
-        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
+        if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0)))
         {
+            SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.SLASH);
             attackTimeCounter = attackTime;
             _rigidbody.velocity = Vector2.zero;
             _animator.SetBool(ATT, true);
@@ -138,7 +141,6 @@ public class PlayerController : MonoBehaviour
 
         if (attackPressed)
         {
-            SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.SLASH);
             attackTimeCounter -= Time.deltaTime;
 
             if (attackTimeCounter < 0)

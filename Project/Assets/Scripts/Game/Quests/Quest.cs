@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Quest : MonoBehaviour
 {
-    public bool needsItem, killEnemy, questCompleted;
+    public bool needsItem, killEnemy, questCompleted, lastQuest;
     public string startText, completeText, title;
     public int questID;
     private QuestManager questManager;
@@ -13,6 +13,7 @@ public class Quest : MonoBehaviour
     public QuestItem item;
     public QuestEnemy enemy;
     public Quest nextQuest;
+    public GameObject gameFinished;
 
     public void StartQuest()
     {
@@ -30,6 +31,12 @@ public class Quest : MonoBehaviour
         if (nextQuest != null)
         {
             Invoke("ActivateNextQuest", 7.0f);
+        }
+
+        if (lastQuest)
+        {
+            Time.timeScale = 0;
+            gameFinished.SetActive(true);
         }
 
         gameObject.SetActive(false);

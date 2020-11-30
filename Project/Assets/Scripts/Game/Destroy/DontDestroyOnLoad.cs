@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DontDestroyOnLoad : MonoBehaviour
 {
+    public bool reboot;
+
     //Don't destroy elements when changing to another scene
     void Start()
     {
@@ -16,15 +18,4 @@ public class DontDestroyOnLoad : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    /*
-     *     private static GameObject instance;
-    void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-        if (instance == null)
-            instance = gameObject;
-        else
-            Destroy(gameObject);
-    }*/
 }
