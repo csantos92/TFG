@@ -12,15 +12,17 @@ public class WeaponDamage : MonoBehaviour
     public GameObject canvasDamage;
     private GameObject hitPoint;
 
-    private void Start()
+    public void Start()
     {
         hitPoint = transform.Find("Hit Point").gameObject;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag.Equals("Enemy"))
         {
+            SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.BLOOD);
+
             int totalDamage = damage;
 
             //Calcula la suerte para el fallo del enemigo

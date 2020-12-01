@@ -3678,7 +3678,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Andar: \n\nCorrer:\n\nAbrir men\xFA: \n\nHablar/Interactuar: \n\nTomar
+  m_Text: "Andar: \n\nCorrer:\n\nAbrir inventario: \n\nHablar/Interactuar: \n\nTomar
     poci\xF3n: \n\nAtacar: \n\nNavegar por los men\xFAs: "
 --- !u!222 &1637757346
 CanvasRenderer:
@@ -3898,7 +3898,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialScreen: {fileID: 1970390179}
   destroyMe: {fileID: 0}
-  _dontDestroyOnLoad: {fileID: 0}
 --- !u!1 &1907671651
 GameObject:
   m_ObjectHideFlags: 0
@@ -4315,7 +4314,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "ASWD\n\nShift izquierdo\n\nE o click en el icono de men\xFA\n\nQ\n\nC
-    o click en el icono de poci\xF3n\n\nEspacio o click izquierdo\t\n\nClick izquierdo"
+    o click en el icono de poci\xF3n\n\nClick derecho\t\n\nClick izquierdo"
 --- !u!222 &2084379932
 CanvasRenderer:
   m_ObjectHideFlags: 0

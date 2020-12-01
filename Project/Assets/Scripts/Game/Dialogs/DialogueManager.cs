@@ -14,19 +14,15 @@ public class DialogueManager : MonoBehaviour
     public Image avatarImage;
     private PlayerController _playerController;
     public Animator _animator;
-    private NPCDialogue _npcDialogue;
     public Button talkButton;
 
-    private void Start()
+    public void Start()
     {
         dialogueActive = false;
         dialogueBox.SetActive(false);
         dialogueBoxTitle.SetActive(false);
-
         _playerController = FindObjectOfType<PlayerController>();
-        _npcDialogue = FindObjectOfType<NPCDialogue>();
         _animator = GameObject.Find("Player").GetComponent<Animator>();
-
         Button btn = talkButton.GetComponent<Button>();
         btn.onClick.AddListener(ContinueTalk);
     }
@@ -35,8 +31,8 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogueActive)
         {
-            currentDialogueLine++;
             SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
+            currentDialogueLine++;
 
             if (currentDialogueLine >= dialogueLines.Length)
             {
@@ -52,7 +48,6 @@ public class DialogueManager : MonoBehaviour
                 {
                     setActive = true;
                 }
-                SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIALOG);                
             }
             else
             {
@@ -65,13 +60,11 @@ public class DialogueManager : MonoBehaviour
     {
         ShowDialogueFill(lines);
         dialogueTitleText.text = npcName;
-        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIALOG);
     }
 
     public void ShowDialogue(string[] lines)
     {
         ShowDialogueFill(lines);
-        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIALOG);
     }
 
     public void ShowDialogue(string[] lines, string npcName, Sprite sprite)
@@ -79,11 +72,11 @@ public class DialogueManager : MonoBehaviour
         ShowDialogue(lines, npcName);
         avatarImage.enabled = true;
         avatarImage.sprite = sprite;
-        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIALOG);
     }
 
-    private void ShowDialogueFill(string[] lines)
+    public void ShowDialogueFill(string[] lines)
     {
+        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
         currentDialogueLine = 0;
         dialogueLines = lines;
         dialogueActive = true;

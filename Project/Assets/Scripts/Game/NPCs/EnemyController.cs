@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
     };
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
@@ -31,7 +31,7 @@ public class EnemyController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    public void FixedUpdate()
     {
         if (playerInTheZone)
         {
@@ -41,7 +41,6 @@ public class EnemyController : MonoBehaviour
                 StartWalking(0);
                 walkCounter = walkTime;
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-                //EnemyFix();
             }
 
             else if (((transform.position.x - player.transform.position.x < 1 && transform.position.x - player.transform.position.x >= 0) || (transform.position.x - player.transform.position.x > -1 && transform.position.x - player.transform.position.x < 0)) && (transform.position.y > player.transform.position.y && transform.position.y - player.transform.position.y > 0.5))
@@ -50,7 +49,6 @@ public class EnemyController : MonoBehaviour
                 StartWalking(1);
                 walkCounter = walkTime;
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-                //EnemyFix();
             }
             else if (transform.position.x < player.transform.position.x)
             {
@@ -58,7 +56,6 @@ public class EnemyController : MonoBehaviour
                 StartWalking(3);
                 walkCounter = walkTime;
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-                //EnemyFix();
             }
 
             else if (transform.position.x > player.transform.position.x)
@@ -66,13 +63,17 @@ public class EnemyController : MonoBehaviour
                 walkTime = 30;
                 StartWalking(2);
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-                //EnemyFix();
             }
 
         }
 
         if ((transform.position.x - player.transform.position.x < 1 && transform.position.x - player.transform.position.x >= 0 || transform.position.x - player.transform.position.x > -1 && transform.position.x - player.transform.position.x < 0) && (transform.position.y - player.transform.position.y < 1 && transform.position.y - player.transform.position.y >= 0 || transform.position.y - player.transform.position.y > -1 && transform.position.y - player.transform.position.y < 0))
         {
+            if (!transform.gameObject.name.Equals("Wolf"))
+            {
+                SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.SLASH);
+            }
+
             isAttacking = true;
         }
         else
@@ -110,7 +111,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name.Equals("Player"))
         {
@@ -118,7 +119,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    public void OnTriggerExit2D(Collider2D collision)
     {
         if (!collision.gameObject.name.Equals("Player"))
         {
@@ -126,7 +127,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.name.Equals("Player"))
         {
@@ -134,7 +135,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void LateUpdate()
+    public void LateUpdate()
     {
         _animator.SetBool("Attacking", isAttacking);
         _animator.SetBool("Walking", isWalking);
@@ -180,13 +181,5 @@ public class EnemyController : MonoBehaviour
         isWalking = false;
         waitCounter = waitTime;
         _rigidBody.velocity = Vector2.zero;
-    }
-
-    public void EnemyFix()
-    {
-        if(Vector3.Distance(transform.position, player.transform.position) < 2)
-        {
-            StopWalking();
-        }
     }
 }

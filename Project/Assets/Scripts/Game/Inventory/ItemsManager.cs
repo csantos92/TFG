@@ -11,14 +11,14 @@ public class ItemsManager : MonoBehaviour
     public GameObject potionCanvas;
     public GameObject player;
 
-    private void Start()
+    public void Start()
     {
         _healthManager = player.GetComponentInChildren<HealthManager>();
         count = 0;
         hp = 0;
     }
 
-    private void Update()
+    public void Update()
     {
         if(count < 10)
         {
@@ -30,7 +30,7 @@ public class ItemsManager : MonoBehaviour
         }
     }
 
-    private List<GameObject> questItems = new List<GameObject>();
+    public List<GameObject> questItems = new List<GameObject>();
     public List<GameObject> GetQuestItems()
     {
         return questItems;
@@ -64,7 +64,7 @@ public class ItemsManager : MonoBehaviour
     /// Items
     /// </summary>
 
-    private List<GameObject> items = new List<GameObject>();
+    public List<GameObject> items = new List<GameObject>();
     public List<GameObject> GetItems()
     {
         return items;
@@ -101,6 +101,7 @@ public class ItemsManager : MonoBehaviour
 
     public void AddItem(GameObject item)
     {
+        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.GRAB);
         items.Add(item);
         count++;
     }

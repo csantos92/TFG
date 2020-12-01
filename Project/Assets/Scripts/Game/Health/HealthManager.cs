@@ -14,7 +14,7 @@ public class HealthManager : MonoBehaviour
     public UIManager _uiManager;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         _characterRenderer = GetComponent<SpriteRenderer>();
         sprites = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<SpriteRenderer>();
@@ -23,7 +23,7 @@ public class HealthManager : MonoBehaviour
         flashActive = true;
     }
 
-    private void Update()
+    public void Update()
     {
         if (flashActive)
         {
@@ -51,17 +51,7 @@ public class HealthManager : MonoBehaviour
 
     public void DamageCharacter(int damage)
     {
-        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.HIT);
         currentHealth -= damage;
-
-        if (gameObject.name.Equals("Player"))
-        {
-            SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.HIT);
-        }
-        else if (gameObject.tag.Equals("Enemy"))
-        {
-            SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.ATTACK);
-        }
 
         if (currentHealth <= 0) //health
         {
@@ -87,13 +77,12 @@ public class HealthManager : MonoBehaviour
 
         if(flashLength > 0)
         {
-            //GetComponent<BoxCollider2D>().enabled = false;
             flashActive = true;
             flashCounter = flashLength;
         }
     }
 
-    void ToggleColor(bool visible)
+    public void ToggleColor(bool visible)
     {
         _characterRenderer.color = new Color(_characterRenderer.color.r,
                                                 _characterRenderer.color.g,

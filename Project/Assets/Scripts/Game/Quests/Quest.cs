@@ -48,7 +48,7 @@ public class Quest : MonoBehaviour
         nextQuest.StartQuest();
     }
 
-    private void Update()
+    public void Update()
     {
         if(needsItem && 1 == 0)
         {

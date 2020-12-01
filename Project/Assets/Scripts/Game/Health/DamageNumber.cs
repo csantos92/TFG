@@ -11,7 +11,7 @@ public class DamageNumber : MonoBehaviour
     public Vector2 direction = new Vector2(1, 2);
     
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         timeToChangeDirectionCounter -= Time.deltaTime;
         if(timeToChangeDirectionCounter < timeToChangeDirection/2)

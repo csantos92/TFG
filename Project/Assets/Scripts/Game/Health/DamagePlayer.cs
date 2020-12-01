@@ -10,15 +10,17 @@ public class DamagePlayer : MonoBehaviour
     public GameObject bloodAnim, canvasDamage;
     private GameObject hitPoint;
 
-    private void Start()
+    public void Start()
     {
         hitPoint = transform.Find("Hit Point").gameObject;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name.Equals("Player"))
         {
+            SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.BLOOD);
+
             int totalDamage = damage;
 
             //Calcula la suerte para el fallo del enemigo

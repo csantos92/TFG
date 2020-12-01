@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Animal
   - Katana
+  - Butterfly
+  - Chicken
   layers:
   - Default
   - TransparentFX

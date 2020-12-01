@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using System.Text;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
@@ -18,10 +17,10 @@ public class UIManager : MonoBehaviour
     private ItemsManager itemsManager;
     public Text inventoryText, swordName, swordDamage;
     public Image swordImage;
-    public Button inventoryButton;
+    public Button inventoryButton, enterInventory;
 
     //Set all components not visible
-    private void Start()
+    public void Start()
     {
         numberOfKatanas = 1;
         weaponManager = FindObjectOfType<WeaponManager>();
@@ -34,13 +33,12 @@ public class UIManager : MonoBehaviour
         questsPanel.SetActive(false);
         statsPanel.SetActive(false);
         gameOver.SetActive(false);
-
-        Button btn = inventoryButton.GetComponent<Button>();
+        Button btn = enterInventory.GetComponent<Button>();
         btn.onClick.AddListener(ToggleInventory);
     }
 
     //Open or close pause menu
-    void Update()
+    public void Update()
     {
         playerHealthBar.maxValue = playerHealthManager.maxHealth;
         playerHealthBar.value = playerHealthManager.currentHealth;
@@ -166,7 +164,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void AddItemToInventory(GameObject item, InventoryButton.ItemType type, int pos)
+    public void AddItemToInventory(GameObject item, InventoryButton.ItemType type, int pos)
     {
         Button tempB = Instantiate(inventoryButton, itemsPanel.transform);
         tempB.GetComponent<InventoryButton>().type = type;

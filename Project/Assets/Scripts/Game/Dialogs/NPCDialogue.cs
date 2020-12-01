@@ -15,12 +15,12 @@ public class NPCDialogue : MonoBehaviour
     private DialogueManager _dialogueManager;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         _dialogueManager = FindObjectOfType<DialogueManager>();
     }
 
-    void Update()
+    public void Update()
     {
         if(playerInTheZone && automaticTalk)
         {
@@ -34,7 +34,13 @@ public class NPCDialogue : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.Q)) { StartTalk(); }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            if (!_dialogueManager.dialogueActive)
+            {
+                StartTalk();
+            }
+        }
 
         if(playerInTheZone && finishQuestByTalk)
         {
@@ -55,7 +61,7 @@ public class NPCDialogue : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name.Equals("Player"))
         {
@@ -63,7 +69,7 @@ public class NPCDialogue : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    public void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.name.Equals("Player"))
         {
