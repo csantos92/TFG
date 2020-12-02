@@ -6,12 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu/Title Screen.unity
+    path: Assets/Scenes/Title/Title Screen.unity
     guid: 76311aaf30eb0a84fb7ad37fa55c6dce
   - enabled: 1
     path: Assets/Scenes/Game/Level/Level.unity
     guid: 38a66b931150e3a4c9353e101443e6cc
-  - enabled: 1
-    path: Assets/Scenes/Game/House Interior/House Interior.unity
-    guid: 01d1ec373dc872a4fa2e060a3825c8a8
   m_configObjects: {}

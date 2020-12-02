@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private ItemsManager _itemsManager;
     private UIManager _uiManager;
     public DialogueManager _dialogueManager;
+    private AttackNotAllowed _attackNotAllowed;
 
     // Get player component
     public void Start()
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _itemsManager = FindObjectOfType<ItemsManager>();
         _uiManager = FindObjectOfType<UIManager>();
+        _attackNotAllowed = FindObjectOfType<AttackNotAllowed>();
         playerCreated = true;
         canMove = true;
         speed = 5.0f;
@@ -88,7 +90,7 @@ public class PlayerController : MonoBehaviour
 
         transform.position = pos;
 
-        if (Input.GetKey(KeyCode.Mouse1) && (!_dialogueManager.dialogueActive && !_uiManager.inventoryPanel.activeInHierarchy))
+        if (Input.GetKey(KeyCode.Mouse1) && (!_dialogueManager.dialogueActive && !_uiManager.inventoryPanel.activeInHierarchy) && !_attackNotAllowed.playerInZone)
         {
             SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.SLASH);
             attackTimeCounter = attackTime;

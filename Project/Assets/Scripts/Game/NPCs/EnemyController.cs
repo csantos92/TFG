@@ -121,7 +121,7 @@ public class EnemyController : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if (!collision.gameObject.name.Equals("Player"))
+        if (collision.gameObject.name.Equals("Player"))
         {
             playerInTheZone = false;
         }
