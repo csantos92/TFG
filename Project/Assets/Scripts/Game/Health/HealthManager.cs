@@ -59,9 +59,16 @@ public class HealthManager : MonoBehaviour
             {
                 if (isBoss)
                 {
+                    SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIE2);
                     this.transform.gameObject.GetComponentInChildren<NPCDialogue>().blockPaths.SetActive(false);
                     _uiManager.bossDead = true;
                 }
+            }
+
+            if (gameObject.name.Equals("Wolf"))
+            {
+                SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.WOLF2);
+                isDead = true;
             }
 
             if (gameObject.name.Equals("Player"))

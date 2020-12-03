@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{5B9FF267-005F-A3BF-219E-FEAE2D8C894F}</ProjectGuid>
+    <ProjectGuid>{3C7A7A6F-6889-8CE3-B330-B5809AD3F240}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -82,10 +82,10 @@
     <Compile Include="Assets\Scripts\Game\Audio\SFXManager.cs" />
     <Compile Include="Assets\Scripts\Game\Camera\CameraLimits.cs" />
     <Compile Include="Assets\Scripts\Game\NPCs\NpcMovement.cs" />
+    <Compile Include="Assets\Scripts\Game\Others\AttackNotAllowed.cs" />
     <Compile Include="Assets\Scripts\Game\Inventory\InventoryButton.cs" />
     <Compile Include="Assets\Scripts\Game\Quests\QuestManager.cs" />
     <Compile Include="Assets\Scripts\Game\Inventory\Items.cs" />
-    <Compile Include="Assets\Scripts\Game\Others\AttackNotAllowed.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

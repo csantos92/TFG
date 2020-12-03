@@ -21,6 +21,11 @@ public class DamagePlayer : MonoBehaviour
         {
             SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.BLOOD);
 
+            if (transform.gameObject.name.Equals("Wolf"))
+            {
+                SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.WOLF);
+            }
+
             int totalDamage = damage;
 
             //Calcula la suerte para el fallo del enemigo

@@ -9,6 +9,7 @@ public class Quest : MonoBehaviour
     public string startText, completeText, title;
     public int questID;
     private QuestManager questManager;
+    private DialogueManager _dialogueManager;
     public Sprite npcSprite;
     public QuestItem item;
     public QuestEnemy enemy;
@@ -18,6 +19,7 @@ public class Quest : MonoBehaviour
     public void StartQuest()
     {
         questManager = FindObjectOfType<QuestManager>();
+        _dialogueManager = FindObjectOfType<DialogueManager>();
         questManager.ShowQuestText(startText, title, npcSprite);
     }
 
@@ -33,7 +35,7 @@ public class Quest : MonoBehaviour
             Invoke("ActivateNextQuest", 7.0f);
         }
 
-        if (lastQuest)
+        if (lastQuest && _dialogueManager.setActive)
         {
             Time.timeScale = 0;
             gameFinished.SetActive(true);

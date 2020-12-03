@@ -9,7 +9,7 @@ public class NPCDialogue : MonoBehaviour
     public string npcName;
     public string[] npcDialogueLines;
     private bool playerInTheZone;
-    public bool automaticTalk, finishQuestByTalk, isBoss, thisEnemyTalking, finishTalk;
+    public bool automaticTalk, finishQuestByTalk, isBoss, thisEnemyTalking, finishTalk, isCat, isDog;
     public Sprite npcSprite;
     public GameObject finishQuest, blockPaths, boss;
     private DialogueManager _dialogueManager;
@@ -81,6 +81,16 @@ public class NPCDialogue : MonoBehaviour
     {
         if (playerInTheZone)
         {
+            if (isCat)
+            {
+                SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.CAT);
+            }
+
+            if (isDog)
+            {
+                SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DOG);
+            }
+
             string[] finalDialogue = new string[npcDialogueLines.Length];
 
             int i = 0;
