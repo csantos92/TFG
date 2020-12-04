@@ -48,6 +48,7 @@ public class DialogueManager : MonoBehaviour
                 {
                     setActive = true;
                 }
+
             }
             else
             {

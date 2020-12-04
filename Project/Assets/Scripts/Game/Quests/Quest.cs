@@ -9,18 +9,35 @@ public class Quest : MonoBehaviour
     public string startText, completeText, title;
     public int questID;
     private QuestManager questManager;
-    private DialogueManager _dialogueManager;
     public Sprite npcSprite;
     public QuestItem item;
     public QuestEnemy enemy;
     public Quest nextQuest;
-    public GameObject gameFinished;
+    public GameObject gameFinished, dialogOn, dialogOff;
+
+    public void Update()
+    {
+        if (needsItem && 1 == 0)
+        {
+            CompleteQuest();
+        }
+
+        if (killEnemy && enemy.gameObject.GetComponent<HealthManager>().currentHealth <= 0)
+        {
+            CompleteQuest();
+        }
+    }
 
     public void StartQuest()
     {
         questManager = FindObjectOfType<QuestManager>();
-        _dialogueManager = FindObjectOfType<DialogueManager>();
         questManager.ShowQuestText(startText, title, npcSprite);
+
+        if (lastQuest)
+        {
+            dialogOn.SetActive(true);
+            dialogOff.SetActive(false);
+        }
     }
 
     public void CompleteQuest()
@@ -35,31 +52,23 @@ public class Quest : MonoBehaviour
             Invoke("ActivateNextQuest", 7.0f);
         }
 
-        if (lastQuest && _dialogueManager.setActive)
+        if (lastQuest)
         {
-            Time.timeScale = 0;
-            gameFinished.SetActive(true);
+            Invoke("FinishGame", 10.0f);
         }
 
         gameObject.SetActive(false);
+    }
+
+    public void FinishGame()
+    {
+        Time.timeScale = 0;
+        gameFinished.SetActive(true);
     }
 
     public void ActivateNextQuest()
     {
         nextQuest.gameObject.SetActive(true);
         nextQuest.StartQuest();
-    }
-
-    public void Update()
-    {
-        if(needsItem && 1 == 0)
-        {
-            CompleteQuest();
-        }
-
-        if(killEnemy && enemy.gameObject.GetComponent<HealthManager>().currentHealth <= 0)
-        {
-            CompleteQuest();
-        }
     }
 }

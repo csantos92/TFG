@@ -11,11 +11,11 @@ public class QuestManager : MonoBehaviour
     public Text questTitle, questMessage;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         dialogueManager = FindObjectOfType<DialogueManager>();
 
-        foreach(Transform t in transform)
+        foreach (Transform t in transform)
         {
             quests.Add(t.gameObject.GetComponent<Quest>());
         }

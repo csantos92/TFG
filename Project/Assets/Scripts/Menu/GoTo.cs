@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GoTo : MonoBehaviour
 {
-    public GameObject tutorialScreen, destroyMe;
+    public GameObject tutorialScreen, storyScreen, destroyMe;
 
     //Exit to Windows desktop
     public void CloseGame()
@@ -15,8 +15,8 @@ public class GoTo : MonoBehaviour
     public void GoToMainScreen()
     {
         SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
-        //SceneManager.LoadScene(0);
         tutorialScreen.SetActive(false);
+        storyScreen.SetActive(false);
     }
 
     //Go to tutorial screen
@@ -24,6 +24,13 @@ public class GoTo : MonoBehaviour
     {
         SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
         tutorialScreen.SetActive(true);
+    }
+
+    //Go to story screen
+    public void GoToStory()
+    {
+        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
+        storyScreen.SetActive(true);
     }
 
     //Go to game level

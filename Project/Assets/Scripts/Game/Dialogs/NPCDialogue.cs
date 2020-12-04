@@ -58,6 +58,7 @@ public class NPCDialogue : MonoBehaviour
         if (isBoss && thisEnemyTalking && !_dialogueManager.dialogueActive)
         {
             transform.parent.GetComponent<EnemyController>().enabled = true;
+            transform.gameObject.GetComponent<NPCDialogue>().enabled = false;
         }
     }
 
