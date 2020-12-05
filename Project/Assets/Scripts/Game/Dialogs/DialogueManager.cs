@@ -42,13 +42,12 @@ public class DialogueManager : MonoBehaviour
                 avatarImage.enabled = false;
                 dialogueBox.SetActive(false);
                 dialogueBoxTitle.SetActive(false);
-                _animator.enabled = true;
+                _animator.enabled = true; 
 
                 if (finishQuestByTalking)
                 {
                     setActive = true;
                 }
-
             }
             else
             {

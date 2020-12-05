@@ -30,6 +30,12 @@ public class GoTo : MonoBehaviour
     public void GoToStory()
     {
         SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.MENU);
+
+        if (storyScreen.activeInHierarchy)
+        {
+            storyScreen.SetActive(false);
+        }
+
         storyScreen.SetActive(true);
     }
 

@@ -24,7 +24,6 @@ ScriptsOnlyBuild:
     - PlayerController
     - Quest
     - QuestEnemy
-    - QuestItem
     - QuestManager
     - QuestTrigger
     - SFXManager
@@ -56,8 +55,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -155,8 +156,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13450}
     - Class: 114
       Script: {instanceID: 13472}
-    - Class: 114
-      Script: {instanceID: 13708}
     - Class: 114
       Script: {instanceID: 13788}
     - Class: 114
@@ -541,7 +540,7 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: c097f7a6dae7635c86d412f5a9808c66
+      Hash: a1c3148badc8d4cc61882372f596c036
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Quest
@@ -631,7 +630,7 @@ ScriptsOnlyBuild:
     className: AudioManager
   - hash:
       serializedVersion: 2
-      Hash: 63bb89fef360bf3efd79f36b97b1f00c
+      Hash: beb427283e7e53af951681bccdf140a6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: QuestTrigger
@@ -841,7 +840,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: 3e5cecd20a6ca1a67b1782d4d0c52734
+      Hash: 93d6c7109abc2d04668bb725a7f0e067
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GoTo
@@ -865,7 +864,7 @@ ScriptsOnlyBuild:
     className: CameraLimits
   - hash:
       serializedVersion: 2
-      Hash: cd59ec21d54bf6b3bcf0df9784a052ab
+      Hash: f2331bc42abd34927e3b73e230817884
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NpcMovement
@@ -993,4 +992,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Title/Title Screen.unity
   - Assets/Scenes/Game/Level/Level.unity
-  playerPath: C:/Users/Carlos/Desktop/juego/v5/La leyenda de Masamune.exe
+  playerPath: C:/Users/Carlos/Desktop/juego/v8/La leyenda de Masamune.exe

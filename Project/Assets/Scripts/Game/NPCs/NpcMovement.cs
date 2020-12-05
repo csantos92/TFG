@@ -5,12 +5,13 @@ using UnityEngine;
 public class NpcMovement : MonoBehaviour
 {
     public float speed, walkTime, waitTime;
-    public bool isTalking, isWalking;
+    public bool isTalking, isWalking, continueWalking;
     private float waitCounter, walkCounter;
-    private int currentDirection;
+    public int currentDirection;
     private Rigidbody2D _rigidBody;
     private Animator _animator;
     public BoxCollider2D npcZone;
+    public GameObject dialog;
     public Vector2 directionToMove;
     private Vector2[] walkingDirections =
     {
@@ -18,30 +19,31 @@ public class NpcMovement : MonoBehaviour
     };
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        speed = 1.5f;
-        walkTime = 1.5f;
-        waitTime = 4.0f;
         waitCounter = waitTime;
         walkCounter = walkTime;
     }
 
+    public void Update()
+    {
+        if (isTalking && dialog != null && !dialog.activeInHierarchy)
+        {
+            isTalking = false;
+            StartWalking(currentDirection);
+        }
+    }
+
     // Update is called once per frame
-    void FixedUpdate()
+    public void FixedUpdate()
     {
         if (isTalking)
         {
             StopWalking();
             return;
         }
-        else
-        {
-            StartWalking(currentDirection);
-        }
-
 
         if (isWalking)
         {
@@ -74,7 +76,7 @@ public class NpcMovement : MonoBehaviour
         }
     }
 
-    private void LateUpdate()
+    public void LateUpdate()
     {
         _animator.SetBool("Walking", isWalking);
         _animator.SetFloat("Horizontal", walkingDirections[currentDirection].x);
@@ -107,7 +109,7 @@ public class NpcMovement : MonoBehaviour
 
     public void StartWalking(int direction)
     {
-        currentDirection = direction; /*Random.Range(0, walkingDirections.Length);*/
+        currentDirection = direction;
         isWalking = true;
         walkCounter = walkTime;
     }
