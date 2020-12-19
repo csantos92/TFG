@@ -9,11 +9,17 @@ public class Quest : MonoBehaviour
     public string startText, completeText, title;
     public int questID;
     private QuestManager questManager;
+    private AudioManager _audioManager;
     public Sprite npcSprite;
     public QuestItem item;
     public QuestEnemy enemy;
     public Quest nextQuest;
     public GameObject gameFinished, dialogOn, dialogOff;
+
+    public void Start()
+    {
+        _audioManager = FindObjectOfType<AudioManager>();
+    }
 
     public void Update()
     {
@@ -63,6 +69,8 @@ public class Quest : MonoBehaviour
     public void FinishGame()
     {
         Time.timeScale = 0;
+        _audioManager.audioCanBePlayed = false;
+        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.VICTORY);
         gameFinished.SetActive(true);
     }
 
