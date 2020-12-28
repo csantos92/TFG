@@ -14,7 +14,8 @@ public class Quest : MonoBehaviour
     public QuestItem item;
     public QuestEnemy enemy;
     public Quest nextQuest;
-    public GameObject gameFinished, dialogOn, dialogOff;
+    public GameObject gameFinished, dialogOff;
+    public GameObject[] dialogOn;
 
     public void Start()
     {
@@ -41,7 +42,10 @@ public class Quest : MonoBehaviour
 
         if (lastQuest)
         {
-            dialogOn.SetActive(true);
+            foreach(GameObject dialog in dialogOn)
+            {
+                dialog.SetActive(true);
+            }
             dialogOff.SetActive(false);
         }
     }

@@ -55,10 +55,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -540,7 +538,7 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: a1c3148badc8d4cc61882372f596c036
+      Hash: 036f3604cb1756573443e3e6a5eed31b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Quest
@@ -992,4 +990,5 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Title/Title Screen.unity
   - Assets/Scenes/Game/Level/Level.unity
-  playerPath: C:/Users/Carlos/Desktop/juego/v8/La leyenda de Masamune.exe
+  playerPath: "D:/Documentos/Ingenier\xEDa Inform\xE1tica/4to a\xF1o/TFG/PEC Final/Versi\xF3n
+    GOLD/La leyenda de Masamune.exe"
